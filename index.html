@@ -2,9 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <title>Andres Buzzio</title>
+
+    <title>OneSquare</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -15,13 +17,20 @@
     <link href="css/animate.css" rel="stylesheet">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
 
     <!-- Font Awesome -->
     <script src="https://use.fontawesome.com/b611e09f3f.js"></script>
 
-    <!-- Personal -->
-    <script src="js/andresbuzzio.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
+    <!-- MiniColors -->
+    <script src="js/jquery.minicolors.js"></script>
+    <link rel="stylesheet" href="css/jquery.minicolors.css">
+
+    <script src="js/jqColorPicker.min.js"></script>
 
 
   </head>
@@ -41,7 +50,7 @@
         </button>
 
         <!-- Brand name -->
-        <a class="navbar-brand" id="brand-name" href="#">Andres Buzzio</a>
+        <a class="navbar-brand" id="brand-name" href="#">Brand</a>
 
         </div>
 
@@ -51,145 +60,162 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li class="email-me"><a href="mailto:andresbuzzio@gmail.com?subject=AndresBuzzio"><i class="fa fa-envelope-o fa-2x animated infinite pulse"></i>
-</a></li>
+          <li><a href="#">Link One</a></li>
+          <li><a href="#">Link Two</a></li>
+          <li><a href="#">Link Three</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
 
-<div id="section-one" class="ui-widget-header animated flipInX">
+<!-- EDITOR BAR LEFT -->
 
-<div class="the-icon">
-<i class="fa fa-diamond fa-4x"></i>
+    <div class="editorClose animated slideInLeft">
+    <i class="fa fa-angle-left"></i>
+    </div>
+
+    <div class="editorOpen animated fadeIn">
+    <i class="fa fa-angle-right"></i>
+    </div>
+
+    <div id="editor" class="animated slideInLeft">
+
+    <div class="editorColors">
+    <input type="hidden" id="header" class="" data-control="wheel" value="#4ECDC4">
+    </div>
+
+    <div class="editorImages">
+    <i class="fa fa-camera"></i>
+    </div>
+
+    <div class="editorImagesOpen">
+    <i class="fa fa-camera"></i>
+    </div>
+
+    <div id="browse">
+
+    <label class="fileUpload">
+    <input id="uploadBtn" type="file" class="upload" accept="image/gif, image/jpeg, image/png" onchange="readURL(this);" />
+    <span class="uploadBtn">Upload</span>
+    </label>
+
+    </div>
+
+    <div class="editorOpacityOff">
+    <i class="fa fa-adjust"></i>
+    </div>
+
+    <div class="editorOpacity">
+    <i class="fa fa-adjust"></i>
+    </div>
+
+    <div id="slider" data-wjs-element="header"></div>
+    <div id="box-slider"></div>
+
+    <div class="editortrash">
+    <i class="fa fa-trash-o"></i>
+    </div>
+
+  </div>
+  <!-- end editor -->
+
+<!-- EDITOR BAR RIGHT -->
+
+  <div class="editorCloseRight animated slideInRight">
+  <i class="fa fa-angle-right"></i>
+  </div>
+
+  <div class="editorOpenRight animated fadeIn">
+  <i class="fa fa-angle-left"></i>
+  </div>
+
+  <div id="editorRight" class="animated slideInRight">
+
+  <div class="h1-editor">
+  <div class="alignMeLeft">
+  <i class="fa fa-align-left"></i>
+  </div>
+  </div>
+
+  <div class="h1-editor row-2">
+  <div class="alignMeCenter">
+  <i class="fa fa-align-center"></i>
+  </div>
+  </div>
+
+  <div class="h1-editor row-3">
+  <div class="alignMeRight">
+  <i class="fa fa-align-right"></i>
+  </div>
+  </div>
+
+  <div class="h1-editor Tall row-4">
+  <div class="boldMe">
+  <i class="fa fa-bold"></i>
+  </div>
+  </div>
+
 </div>
+<!-- end editor -->
 
-<h1>UI/UX Designer/Developer</h2>
-<h2>Awesome Sites + Apps</h2>
+
+<!-- THE CONTENT -->
+
+<div id="header" class="colourChosen">
+
+<img id="header-image" src="#" alt="" />
+
+<!-- JUMBOTRON -->
+<div class="jumbotron">
+  <div class="container">
+
+    <h1>Hello, World</h1>
+
+    <p class="the-title">Type Your Title</p>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">Button</a></p>
+
+  </div>
 </div>
-
-
-<div id="portfolio">
-
-<div class="row">
-<div class="col-md-3"></div>
-
-<div class="col-md-3">
-<a href="http://asatours.co.uk" target="_blank">
-<div class="square">
-<div class="company">Travel Site</div>
-<div class="location">London, UK</div>
-</div>
-</a>
-</div>
-
-<div class="col-md-3">
-<a href="http://ifthisfits.com" target="_blank">
-<div class="square2">
-<div class="company">Fashion Site</div>
-<div class="location">Chicago, US</div>
-</div>
-</a>
-</div>
-
-<div class="col-md-3"></div>
+<!-- end jumbotron -->
 
 </div>
-<!-- end row -->
+<!-- end header -->
 
-<div class="row">
-<div class="col-md-3"></div>
+<!-- SECTION 2 -->
+<div id="section-2">
 
-<div class="col-md-3">
-<a href="http://berlitzorlando.com" target="_blank">
-<div class="square3">
-<div class="company">Language School</div>
-<div class="location">Miami, US</div>
-</div>
-</a>
-</div>
+  <div class="container">
 
-<div class="col-md-3">
-<a href="http://psdwordpress.com" target="_blank">
-<div class="square4">
-<div class="company">WordPress Dev</div>
-<div class="location">Berlin, Germany</div>
-</div>
-</a>
-</div>
+    <h2>About</h2>
+    <p class="the-title-2">The Grid</p>
 
-<div class="col-md-3"></div>
-</div>
-<!-- end row -->
+    <div class="row">
 
-<div class="row">
-<div class="col-md-3"></div>
-
-<div class="col-md-3">
-<a href="https://uismart.github.io/do/" target="_blank">
-<div class="square">
-<div class="company">Smart UI Builder</div>
-<div class="location">Berlin, Germany</div>
-</div>
-</a>
-</div>
-
-<div class="col-md-3">
-</div>
-
-<div class="col-md-3"></div>
-
-</div>
-<!-- end row -->
-
-</div>
-<!-- end section -->
-
-<div class="section-grey">
-
-<div class="col-md-3"></div>
-
-        <div class="col-md-3">
-        <img class="center-testimonials" src="images/Testimonials1.png" alt="">
-        <p class="centered">“Excellent professional with an awesome love and dedication to his work and customer satisfaction.”<br>
-        </p>
-
-        <p class="centered-bold">Rickhart Schaer GUULM Design, Stockholm</p>
-        </div>
-
-        <div class="col-md-3">
-        <img class="center-testimonials" src="images/Testimonials2.png" alt="">
-        <p class="centered">“Every time we have been impressed with the quality of his work. The semantic layout and excellent use of the CSS exceeded our expectations!”<br>
-        </p>
-
-        <p class="centered-bold">Frida Mullenberg Allianz, Bern + London</p>
-        </div>
-
-        <div class="col-md-3"></div>
-
+      <div class="col-md-4">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </div>
-      <!-- end section -->
 
-<div class="section-grey-dark">
+      <div class="col-md-4">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
 
-  <div class="row">
-  <div class="col-md-4">
+      <div class="col-md-4">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+
+    </div>
+
   </div>
-  <div class="col-md-4">
-  <div class="footer-text">©&nbsp;2013-2016 Andres Buzzio. All Rights Reserved.</div>
-  </div>
-  <div class="col-md-4">
-  </div>
+<!-- end container -->
 </div>
+<!-- end section-2 -->
 
-</div>
-
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
+<!-- The Builder before jQuery _ jQuery UI -->
+<script src="js/metabuilder.js"></script>
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-
+<!-- jQuery UI -->
+<script src="js/jquery-ui-1.10.0.custom.min.js" type="text/javascript"></script>
 </body>
 </html>

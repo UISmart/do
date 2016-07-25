@@ -202,7 +202,7 @@ $(function() {
     });
 });
 
-// H1 ALIGNMENT
+// H1 ALIGNMENT + FONT WEIGHT
 
 $('.alignMeLeft').click(function() {
 $('h1').css ('text-align', 'left');
@@ -218,4 +218,8 @@ $('h1').css ('text-align', 'center');
 
 $('.alignMeJustify').click(function() {
 $('h1').css ('text-align', 'justify');
+});
+
+$('.boldMe').click(function() {
+$('h1').css ('font-weight', '700');
 });
