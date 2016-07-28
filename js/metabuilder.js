@@ -238,40 +238,38 @@ $(function() {
 
 // H1 ALIGNMENT + FONT WEIGHT
 
-$('.h1-editor.alignMeLeft').click(function() {
+$('.alignMeLeft').click(function() {
 $('h1').css ('text-align', 'left');
 });
 
-$('.h1-editor.alignMeRight').click(function() {
+$('.alignMeRight').click(function() {
 $('h1').css ('text-align', 'right');
 });
 
-$('.h1-editor.alignMeCenter').click(function() {
+$('.alignMeCenter').click(function() {
 $('h1').css ('text-align', 'center');
 });
 
-$('.h1-editor.alignMeJustify').click(function() {
-$('h1').css ('text-align', 'justify');
-});
-
-$('.h1-editor.boldMe').click(function() {
+$('.boldMe').click(function() {
 $('h1').css ('font-weight', '700');
 });
 
-// H2 EDITOR.
-
-$(function() {
-    $("h2").focus( function() {
-        $("#editorRight").css("display","none");
-        $(".h2-editor").css("display","block");
-        $(".h2-editor").addClass("animated slideInRight");
-        $('.editorCloseRight').css("display","block");
-        $('.h1-selected').css("display","none");
-        $('.h2-selected').css("display","block");
-    });
+$('.regularMe').click(function() {
+$('h1').css ('font-weight', '500');
 });
 
-// H2 ALIGNMENT + FONT WEIGHT
+// H1 BOLD - REGULAR SELECTOR
+
+$('.h1-editor.row-4').click(function() {
+$('.h1-editor.row-4').css ('display', 'none');
+$('.h1-editorRegular').css ('display', 'block');
+});
+
+$('.h1-editorRegular').click(function() {
+$('.h1-editor.row-4').css ('display', 'block');
+$('.h1-editor.row-4').removeClass ('slideInRight');
+$('.h1-editorRegular').css ('display', 'none');
+});
 
 
 // FONT SELECTOR
@@ -298,4 +296,13 @@ $('.fs-drop').addClass ('animated fadeIn');
 
 $('.h1-editor.row-6').click(function() {
 $('#browseFonts').css ('display', 'block');
+$('.h1-editor.row-6').css ('display', 'none');
+$('.h1-editorOff').css ('display', 'block');
+});
+
+$('.h1-editorOff').click(function() {
+$('#browseFonts').css ('display', 'none');
+$('.h1-editor.row-6').css ('display', 'block');
+$('.h1-editor.row-6').removeClass ('slideInRight');
+$('.h1-editorOff').css ('display', 'none');
 });

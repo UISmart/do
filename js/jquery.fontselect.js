@@ -14,11 +14,21 @@
 
      var fonts = [
       "Arvo",
+      "Georgia",
+      "Helvetica",
       "Lato",
-      "Monserrat",
+      "Montserrat",
       "Nunito",
+      "Open Sans",
+      "Oswald",
       "Pacifico",
-	    "Roboto" ];
+      "Pattaya",
+	    "Roboto",
+      "Suez One",
+      "Raleway",
+      "Rozha One",
+      "Times"
+  ];
 
     var settings = {
       style: 'font-select',

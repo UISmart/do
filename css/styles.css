@@ -1,5 +1,5 @@
 body {
-font-family: 'Lato', sans-serif;
+font-family: 'Raleway', sans-serif;
 }
 
 a:link, a:visited, a:hover, a:active {
@@ -24,6 +24,10 @@ background: rgba(255, 255, 255, 0.7);
 width: 100%;
 }
 
+#brand-name {
+font-weight: 300;
+}
+
 #header {
 position: relative;
 z-index: 1;
@@ -39,6 +43,7 @@ margin: 0 auto;
 width: 100%;
 text-align: center;
 font-size: 3rem;
+font-weight: 300;
 color:#fff;
 }
 
@@ -434,6 +439,32 @@ background: rgba(50, 50, 70, 0.9);
 transition-duration: 1s;
 }
 
+.h1-editorOff {
+display: none;
+cursor: pointer;
+position: absolute;
+top:25em;
+right:0;
+color:#fff;
+width:100%;
+height: 5em;
+background: rgba(50, 50, 70, 0.9);
+z-index: 3;
+}
+
+.h1-editorRegular {
+display: none;
+cursor: pointer;
+position: absolute;
+top:15em;
+right:0;
+color:#fff;
+width:100%;
+height: 5em;
+background: red;
+z-index: 3;
+}
+
 .h2-editor {
 display: none;
 cursor: pointer;
@@ -607,7 +638,7 @@ font-size: 1.5em;
 i.fa-font {
 padding: 24px;
 padding-left:28px;
-color: #36D7B7;
+color: #fff;
 font-size: 1.5em;
 }
 
@@ -775,7 +806,7 @@ img[src='Error.src']{
 #browseFonts {
 display: none;
 position: absolute;
-top:0;
+top:25em;
 right: 5.1em;
 width: 12.2em;
 height: 5em;
@@ -816,20 +847,23 @@ background-image: none !important;
 /* dropdown menu to select font */
 .font-select .fs-drop {
 width: 10.7em !important;
+height: 10em !important;
 background:rgb(50, 50, 70) !important;
 color:#bbb !important;
-border: 0 !important;
-border-radius: 0!important;
-box-shadow:0 !important;
+border-style:none !important;
+box-shadow:none !important;
 position: absolute;
-top:-12.4em !important;
+top:-11.3em !important;
 left: 0;
 z-index: 999;
+border-radius:0 !important;
 }
 
 /* ul class */
 .font-select .fs-results {
-width: 98% !important;
+width: 97.5% !important;
+height:9em !important;
+margin-top:6px !important;
 }
 
 /* li class */
