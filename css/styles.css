@@ -30,17 +30,20 @@ z-index: 1;
 width: 100%;
 height: auto;
 overflow: hidden;
-background-color: #4ECDC4;
+background-color: #36D7B7;
 }
 
-.the-title {
+.subtitle {
 padding:.2em 0;
 margin: 0 auto;
 width: 100%;
 text-align: center;
 font-size: 3rem;
-letter-spacing: .1em;
 color:#fff;
+}
+
+h1:focus {
+outline: 1px dashed rgb(50, 50, 70);
 }
 
 .h2 {
@@ -49,12 +52,18 @@ width: 100%;
 text-align: center !important;
 font-size: 3em;
 letter-spacing: .1em;
-color:rgb(45, 49, 57);
+color:rgb(50, 50, 70);
 }
 
-h1:focus { outline: 1px dashed rgb(45, 49, 57); }
-h2:focus { outline: 1px dashed rgb(45, 49, 57); }
-p.the-title:focus { outline: 1px dashed rgba(255, 255, 255, 0.7); }
+h2:focus { outline: 1px dashed rgb(50, 50, 70); }
+
+h2.subtitle {
+text-align: center;
+}
+
+h2.subtitle:focus {
+outline: 1px dashed rgba(255, 255, 255, 0.7);
+}
 
 /* blinking */
 
@@ -136,7 +145,7 @@ z-index:2;
 }
 
 .navbar-default {
-background: rgb(45, 49, 57);
+background: rgb(50, 50, 70);
 padding-top: 1em;
 border:0;
 border-radius: 0;
@@ -160,7 +169,7 @@ letter-spacing: .2rem;
 }
 
 .navbar-default .navbar-brand:hover {
-color:#4ECDC4;
+color:#36D7B7;
 }
 
 .navbar-brand:focus { outline: none; }
@@ -184,7 +193,7 @@ color:rgb(252, 252, 252);
 }
 
 .navbar-default .navbar-nav>li>a:hover {
-color:#4ECDC4;
+color:#36D7B7;
 }
 
 .col-md-3 {
@@ -197,28 +206,33 @@ margin-bottom: 0;
 }
 
 .jumbotron h1 {
+padding: 4px 0;
 text-align: center;
 font-size: 4em;
-font-weight: 300;
+font-weight: 400;
 }
 
 .jumbotron p {
 text-align: center;
 font-size: 24px;
+font-weight:300 !important;
 }
 
 .btn-primary,
 .btn-primary:visited,
 .btn-primary:active  {
+font-size: 18px;
+text-transform: uppercase;
+letter-spacing: 2px;
 margin-top:2em;
-padding:1.25em;
+padding:1em;
 border:0;
-border-radius: 0;
-background-color: rgb(45, 49, 57);
+border-radius: 1em;
+background-color: rgb(50, 50, 70);
 }
 
 .btn-primary:hover {
-background-color: #204056;
+background-color: #36D7B7;
 }
 
 .fileUpload {
@@ -239,7 +253,7 @@ background:transparent;
 font-size:1em;
 padding:0 1em;
 height:25px;
-color:#4ecdc4;
+color:#36D7B7;
 text-transform: uppercase;
 }
 
@@ -282,7 +296,7 @@ float: left;
 cursor: pointer;
 width:5em;
 height: 2.25em;
-background: rgba(47,54,70, 0.9);
+background: rgba(50, 50, 70, 0.9);
 z-index:8;
 }
 
@@ -294,7 +308,7 @@ float: left;
 cursor: pointer;
 width:5em;
 height: 2.25em;
-background: rgba(47,54,70, 0.9);
+background: rgba(50, 50, 70, 0.9);
 z-index:8;
 }
 
@@ -303,7 +317,7 @@ float: left;
 cursor: pointer;
 width:100%;
 height: 5em;
-background: rgba(47,54,70, 0.7);
+background: rgba(50, 50, 70, 0.7);
 }
 
 .editorImages {
@@ -311,7 +325,7 @@ float: left;
 cursor: pointer;
 width:100%;
 height: 5em;
-background: rgba(47,54,70, 0.7);
+background: rgba(50, 50, 70, 0.7);
 }
 
 .editorImagesOpen {
@@ -320,7 +334,7 @@ float: left;
 cursor: pointer;
 width:100%;
 height: 5em;
-background: rgba(47,54,70, 0.9);
+background: rgba(50, 50, 70, 0.9);
 }
 
 .inputFileContainer {
@@ -332,7 +346,7 @@ float: left;
 cursor: pointer;
 width:100%;
 height: 5em;
-background: rgba(47,54,70, 0.7);
+background: rgba(50, 50, 70, 0.7);
 }
 
 .editorOpacityOff {
@@ -341,7 +355,7 @@ display: none;
 cursor: pointer;
 width:100%;
 height: 5em;
-background: rgba(47,54,70, 0.9);
+background: rgba(50, 50, 70, 0.9);
 }
 
 .editortrash {
@@ -349,13 +363,13 @@ float: left;
 cursor: pointer;
 width:100%;
 height: 5em;
-background: rgba(47,54,70, 0.7);
+background: rgba(50, 50, 70, 0.7);
 }
 
 .editorImages:hover,
 .editorOpacity:hover,
 .editortrash:hover {
-background: rgba(47,54,70, 0.9);
+background: rgba(50, 50, 70, 0.9);
 -webkit-transition-duration: 1s; /* Safari */
 transition-duration: 1s;
 }
@@ -375,6 +389,32 @@ z-index: 3;
 border:0;
 }
 
+#editorRight-h2 {
+position: absolute;
+right:0;
+top:8.25em;
+width:5em;
+z-index: 3;
+border:0;
+}
+
+.h1-selected, .h2-selected {
+border-radius: 50%;
+display: none;
+cursor: pointer;
+position: absolute;
+top: .5em;
+right: 4.5em;
+width: 2.5em;
+height: 2.5em;
+background: rgba(50, 50, 70, 0.7);
+z-index: 5;
+text-align: right;
+font-size: 1.25em;
+color: rgba(255, 255, 255, 1);
+padding: 11px;
+}
+
 .h1-editor {
 display: none;
 cursor: pointer;
@@ -384,8 +424,33 @@ right:0;
 color:#fff;
 width:100%;
 height: 5em;
-background: rgba(47,54,70, 0.7);
+background: rgba(50, 50, 70, 0.7);
 z-index: 3;
+}
+
+.h1-editor:hover {
+background: rgba(50, 50, 70, 0.9);
+-webkit-transition-duration: 1s; /* Safari */
+transition-duration: 1s;
+}
+
+.h2-editor {
+display: none;
+cursor: pointer;
+position: absolute;
+top:0;
+right:0;
+color:#fff;
+width:100%;
+height: 5em;
+background: rgba(0, 0, 0, 0.9);
+z-index: 3;
+}
+
+.h2-editor:hover {
+background: rgba(0, 0, 0, 1);
+-webkit-transition-duration: 1s; /* Safari */
+transition-duration: 1s;
 }
 
 .Tall {
@@ -412,6 +477,11 @@ top:20em;
 top:25em;
 }
 
+.color-icon {
+position: absolute;
+z-index:999;
+}
+
 .editorCloseRight {
 position:absolute;
 top:6em;
@@ -421,7 +491,7 @@ display: none;
 cursor: pointer;
 width:5em;
 height: 2.25em;
-background: rgba(47,54,70, 0.9);
+background: rgba(50, 50, 70, 0.9);
 z-index:8;
 }
 
@@ -434,7 +504,7 @@ display: none;
 cursor: pointer;
 width:5em;
 height: 2.25em;
-background: rgba(47,54,70, 0.9);
+background: rgba(50, 50, 70, 0.9);
 z-index:8;
 }
 
@@ -527,6 +597,20 @@ color: #fff;
 font-size: 1.5em;
 }
 
+i.fa-eyedropper {
+padding: 24px;
+padding-left:28px;
+color: #fff;
+font-size: 1.5em;
+}
+
+i.fa-font {
+padding: 24px;
+padding-left:28px;
+color: #36D7B7;
+font-size: 1.5em;
+}
+
 /*
 ========================================================
 05. OPACITY
@@ -540,7 +624,7 @@ top: 10em;
 left: 5.1em;
 width: 10em;
 height: 4.95em;
-background: rgba(47,54,70, 0.8);
+background: rgba(50, 50, 70, 0.8);
 z-index:5;
 }
 
@@ -574,7 +658,7 @@ height: 1.25em;
 top: -.22em !important;
 border-radius: 0;
 border:0 !important;
-background: #4ecdc4 !important;
+background: #36D7B7 !important;
 outline: none !important;
 margin-right:0 !important;
 }
@@ -612,8 +696,47 @@ width: 4.95em;
 height: 5em;
 }
 
+/* PANELS POSITION */
+
 .minicolors-panel {
-top:6em !important;
+position: absolute;
+width: 173px;
+height: 152px;
+background: transparent !important;
+border: 0 !important;
+box-shadow:none !important;
+z-index: 99999;
+box-sizing: content-box;
+display: none;
+}
+
+.minicolors-position-right .minicolors-panel {
+right: 2em !important;
+top:-5.85em !important;
+}
+
+.minicolors-position-left .minicolors-panel {
+left: 5em !important;
+top: 0 !important;
+}
+
+/* PICKERS */
+
+.minicolors-picker {
+width: 20px !important;
+height: 6px !important;
+background: white;
+border: 0 !important;
+opacity:.8 !important;
+}
+
+.minicolors-grid .minicolors-picker {
+width: 12px !important;
+height: 12px !important;
+border: 0 !important;
+background: white !important;
+border-radius: 0 !important;
+opacity:.8 !important;
 }
 
 .minicolors .minicolors-grid {
@@ -633,8 +756,85 @@ top: 5em;
 left: 5.1em;
 width: 10em;
 height: 4.95em;
-background: rgba(47,54,70, 0.8);
+background: rgba(50, 50, 70, 0.8);
 z-index:5;
+}
+
+/* hide broken */
+
+img[src='Error.src']{
+    display: none;
+}
+
+/*
+========================================================
+08. FONTS
+========================================================
+*/
+
+#browseFonts {
+display: none;
+position: absolute;
+top:0;
+right: 5.1em;
+width: 12.2em;
+height: 5em;
+background: rgba(50, 50, 70, 0.8);
+z-index:5;
+}
+
+.font-select {
+width: 10.5em !important;
+margin-top:1.25em;
+}
+
+.font-select > a {
+background: none !important;
+border: 0 !important;
+border-radius:0 !important;
+box-shadow: none !important;
+color:#fff !important;
+}
+
+.font-select-active > a {
+border: 0 !important;
+border-radius:0 !important;
+box-shadow: none !important;
+}
+
+.font-select > a span {
+font-size:16px;
+}
+
+/* arrow to select font */
+.font-select > a div b {
+background: #36D7B7 !important;
+border: 0 !important;
+background-image: none !important;
+}
+
+/* dropdown menu to select font */
+.font-select .fs-drop {
+width: 10.7em !important;
+background:rgb(50, 50, 70) !important;
+color:#bbb !important;
+border: 0 !important;
+border-radius: 0!important;
+box-shadow:0 !important;
+position: absolute;
+top:-12.4em !important;
+left: 0;
+z-index: 999;
+}
+
+/* ul class */
+.font-select .fs-results {
+width: 98% !important;
+}
+
+/* li class */
+.font-select .fs-results li:hover {
+background: #36D7B7 !important;
 }
 
 /*

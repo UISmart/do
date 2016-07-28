@@ -42,8 +42,8 @@ $(function(){
 // EDITABLE TEXT JUMBOTRON.
 
 $(function(){
-    var $div=$('p.the-title'), isEditable=$div.is('.editable');
-    $('p.the-title').prop('contenteditable',!isEditable).toggleClass('editable');
+    var $div=$('h2.subtitle'), isEditable=$div.is('.editable');
+    $('h2.subtitle').prop('contenteditable',!isEditable).toggleClass('editable');
 })
 
 // EDITABLE CALL-TO-ACTION JUMBOTRON.
@@ -134,7 +134,8 @@ $('.editorOpenRight').css ('display', 'none');
 $('.editorCloseRight').css ('display', 'block');
 });
 
-// COLOR PICKER // DAY 06
+// COLOR PICKER
+// HEADER COLOUR
 
 $('#header').minicolors()
 
@@ -145,6 +146,36 @@ var newCol = $(this).parent().find('.minicolors-swatch-color').attr('style');
 $('.colourChosen').attr('style', newCol);
 
 });
+
+// H1 COLOUR
+
+$('#h1').minicolors()
+
+$("#h1").on('change', function() {
+//var newCol = $(this).parent().find('.minicolors-swatch-color').css("color");
+var newCol = $(this).parent().find('.minicolors-swatch-color').attr('style');
+
+// USE CSS NOT ATTRIB
+$('.h1colour').css("color", newCol);
+});
+
+
+// POSITIONING MINICOLORS-PANELS
+
+$('.h1-editor.row-5').click(function() {
+$('div.minicolors.minicolors-theme-default').removeClass ('minicolors-position-left');
+$('div.minicolors.minicolors-theme-default').addClass ('minicolors-position-right');
+});
+
+$('.editorColors').click(function() {
+$('div.minicolors.minicolors-theme-default').removeClass ('minicolors-position-right');
+$('div.minicolors.minicolors-theme-default').addClass ('minicolors-position-left');
+});
+
+
+// MINICOLORS SETTINGS (WHEEL)
+
+
 
 // DELETE JUMBOTRON.
 
@@ -197,29 +228,74 @@ function readURL(input) {
 $(function() {
     $("h1").focus( function() {
         $(".h1-editor").css("display","block");
+        $(".h2-editor").css("display","none");
         $(".h1-editor").addClass("animated slideInRight");
         $('.editorCloseRight').css("display","block");
+        $('.h1-selected').css("display","block");
+        $('.h2-selected').css("display","none");
     });
 });
 
 // H1 ALIGNMENT + FONT WEIGHT
 
-$('.alignMeLeft').click(function() {
+$('.h1-editor.alignMeLeft').click(function() {
 $('h1').css ('text-align', 'left');
 });
 
-$('.alignMeRight').click(function() {
+$('.h1-editor.alignMeRight').click(function() {
 $('h1').css ('text-align', 'right');
 });
 
-$('.alignMeCenter').click(function() {
+$('.h1-editor.alignMeCenter').click(function() {
 $('h1').css ('text-align', 'center');
 });
 
-$('.alignMeJustify').click(function() {
+$('.h1-editor.alignMeJustify').click(function() {
 $('h1').css ('text-align', 'justify');
 });
 
-$('.boldMe').click(function() {
+$('.h1-editor.boldMe').click(function() {
 $('h1').css ('font-weight', '700');
+});
+
+// H2 EDITOR.
+
+$(function() {
+    $("h2").focus( function() {
+        $("#editorRight").css("display","none");
+        $(".h2-editor").css("display","block");
+        $(".h2-editor").addClass("animated slideInRight");
+        $('.editorCloseRight').css("display","block");
+        $('.h1-selected').css("display","none");
+        $('.h2-selected').css("display","block");
+    });
+});
+
+// H2 ALIGNMENT + FONT WEIGHT
+
+
+// FONT SELECTOR
+
+$(function(){
+$('#font').fontselect().change(function(){
+
+  // replace + signs with spaces for css
+  var font = $(this).val().replace(/\+/g, ' ');
+
+  // split font into family and weight
+  font = font.split(':');
+
+  // set family on H1
+  $('h1').css('font-family', font[0]);
+});
+});
+
+$('.font-select > a').click(function() {
+$('.fs-drop').addClass ('animated fadeIn');
+});
+
+// FONT SELECTOR VISIBLE
+
+$('.h1-editor.row-6').click(function() {
+$('#browseFonts').css ('display', 'block');
 });
