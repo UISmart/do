@@ -330,3 +330,16 @@ $('.minusFont').click(function() {
   $("h1").css({'font-size':fontSize});
 
 });
+
+// STORE THE DESIGN
+
+$('#saveButton').click(function() {
+var options = {
+  files: [
+      // You can specify up to 100 files.
+      {'url': 'index.html'},
+      // ...
+  ],
+};
+Dropbox.save(options);
+});

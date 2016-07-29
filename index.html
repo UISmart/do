@@ -35,6 +35,8 @@
   </head>
   <body>
 
+<div id="storage">
+
     <!-- Brand + Nav -->
 
     <nav class="navbar navbar-default">
@@ -80,7 +82,7 @@
     <div id="editor" class="animated slideInLeft">
 
     <div class="editorColors">
-    <input type="hidden" id="header" class="" data-control="wheel" value="#36D7B7">
+    <input type="hidden" id="header" class="" data-control="wheel" value="#4ECDC4">
     </div>
 
     <div class="editorImages">
@@ -179,12 +181,7 @@
   </div>
 
   <div class="h1-editor row-5">
-  <!--
-  <div class="color-icon">
-  <i class="fa fa-eyedropper"></i>
-  </div>
-  -->
-  <input type="hidden" id="h1" class="" data-control="wheel" value="#36D7B7">
+  <input type="hidden" id="h1" class="" data-control="wheel" value="#4ECDC4">
   </div>
 
   <div class="h1-editor row-6">
@@ -237,7 +234,7 @@
   </div>
 
   <div class="h2-editor row-5">
-  <input type="hidden" id="h1" class="" data-control="wheel" value="#36D7B7">
+  <input type="hidden" id="h1" class="" data-control="wheel" value="#4ECDC4">
   </div>
 
   <div class="h2-editor row-6">
@@ -309,8 +306,36 @@
 </div>
 <!-- end section-2 -->
 
-<!-- The Builder before jQuery _ jQuery UI -->
+</div>
+<!-- end storage -->
+
+<!-- UI Footer -->
+
+<div id="UIFooter">
+<div class="container">
+<div class="row">
+<div class="col-md-4"></div>
+
+<div class="col-md-4">
+  <div class="col-md-4"></div>
+
+  <div class="col-md-4">
+  <div id="saveButton" class="dropbox-saver">
+  <a class="saveFont" href="">Save</a>
+  </div>
+  </div>
+
+  <div class="col-md-4"></div>
+</div>
+
+<div class="col-md-4"></div>
+</div>
+</div>
+</div>
+
+<!-- JS The Builder before jQuery _ jQuery UI -->
 <script src="js/metabuilder.js"></script>
+<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="mwaps8uziof7iu9"></script>
 <!-- jQuery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
