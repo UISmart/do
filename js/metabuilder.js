@@ -337,7 +337,7 @@ $('#saveButton').click(function() {
 var options = {
   files: [
       // You can specify up to 100 files.
-      {'url': 'index.html'},
+      {'url': 'https://uismart.github.io/do/index.html'},
       // ...
   ],
 };
