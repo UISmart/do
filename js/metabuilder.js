@@ -233,6 +233,7 @@ $(function() {
         $('.editorCloseRight').css("display","block");
         $('.h1-selected').css("display","block");
         $('.h2-selected').css("display","none");
+        $('.regularMe').css("display","none");
     });
 });
 
@@ -252,6 +253,7 @@ $('h1').css ('text-align', 'center');
 
 $('.boldMe').click(function() {
 $('h1').css ('font-weight', '700');
+$('.regularMe').css ('display', 'block');
 });
 
 $('.regularMe').click(function() {
@@ -296,6 +298,7 @@ $('.fs-drop').addClass ('animated fadeIn');
 
 $('.h1-editor.row-6').click(function() {
 $('#browseFonts').css ('display', 'block');
+$('#plus-minus').css ('display', 'block');
 $('.h1-editor.row-6').css ('display', 'none');
 $('.h1-editorOff').css ('display', 'block');
 });
@@ -305,4 +308,25 @@ $('#browseFonts').css ('display', 'none');
 $('.h1-editor.row-6').css ('display', 'block');
 $('.h1-editor.row-6').removeClass ('slideInRight');
 $('.h1-editorOff').css ('display', 'none');
+$('#plus-minus').css ('display', 'none');
+});
+
+// FONT SIZE
+
+$('.plusFont').click(function() {
+// The parseInt() function parses a string and returns an integer
+
+  var fontSize = parseInt($("h1").css("font-size"));
+  fontSize = fontSize + 1 + "px";
+  $("h1").css({'font-size':fontSize});
+
+});
+
+$('.minusFont').click(function() {
+// The parseInt() function parses a string and returns an integer
+
+  var fontSize = parseInt($("h1").css("font-size"));
+  fontSize = fontSize - 1 + "px";
+  $("h1").css({'font-size':fontSize});
+
 });

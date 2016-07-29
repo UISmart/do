@@ -23,10 +23,12 @@
       "Oswald",
       "Pacifico",
       "Pattaya",
+      "Parisienne",
+      "Questrial",
 	    "Roboto",
       "Suez One",
       "Raleway",
-      "Rozha One",
+      "Roboto Slab",
       "Times"
   ];
 
