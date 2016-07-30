@@ -175,16 +175,20 @@ $('div.minicolors.minicolors-theme-default').addClass ('minicolors-position-left
 
 // MINICOLORS SETTINGS (WHEEL)
 
+// ADD JUMBOTRON.
 
+$('.editorAddJumbotron').click(function() {
+$('.jumbotron').show().delay(500).fadeIn();
+$('.editorAddJumbotron').css('display', 'none');
+$('.editortrash').css('display', 'block');
+});
 
 // DELETE JUMBOTRON.
 
-$(document).ready(function() {
-
 $('.editortrash').click(function() {
-$("#header").hide().delay(500).fadeOut();
-});
-
+$('.jumbotron').show().delay(200).fadeOut();
+$('.editorAddJumbotron').css('display', 'block');
+$('.editortrash').css('display', 'none');
 });
 
 // BROWSE IMAGES > //
