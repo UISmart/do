@@ -256,9 +256,8 @@ function readURL(input) {
 $(function() {
     $("h1").focus( function() {
 
-        $("#editorRightH2").hide();
-        $("#editorRight").show();
         $("#editorRight").css("display","block");
+        $("#editorRightH2").css("display","none");
         $(".editorCloseRight").css("display","block");
         $(".editorOpenRightH2").css("display","none");
         $(".editorCloseRightH2").css("display","none");
@@ -266,11 +265,15 @@ $(function() {
         $(".h1-selected").css("display","block");
         $(".h2-selected").css("display","none");
 
+        $("#editorRight").addClass("animated slideInRight");
+        $("#editorRightH2").removeClass("animated slideOutRight");
         $(".editorBox").addClass("animated slideInRight");
-        $(".editorBoxBold").show();
-        $(".editorBoxRegular").hide();
-        $('.editorCloseRight').css("display","block");
-        $('.editorCloseRightH2').css("display","none");
+
+        // none of the editorBoxes apart of the BOLD option
+        $(".editorBoxBold").css("display","block");
+        $(".editorBoxRegularH2").css("display","none");
+        $(".editorBoxRegular").css("display","none");
+
 
     });
 });
@@ -280,21 +283,23 @@ $(function() {
 $(function() {
     $("h2").focus( function() {
 
-        $("#editorRight").hide();
-        $("#editorRightH2").show();
         $("#editorRightH2").css("display","block");
+        $("#editorRight").css("display","none");
         $(".editorOpenRight").css("display","none");
         $(".editorCloseRight").css("display","none");
-        $(".editorCloseRighth2").css("display","block");
+        $(".editorCloseRightH2").css("display","block");
 
         $(".h2-selected").css("display","block");
         $(".h1-selected").css("display","none");
 
-        $(".editorBox").addClass("animated slideInRight");
-        $(".editorBoxBold").show();
-        $(".editorBoxRegular").hide();
-        $('.editorCloseRight').css("display","none");
-        $('.editorCloseRightH2').css("display","block");
+        $("#editorRightH2").addClass("animated slideInRight");
+        $("#editorRight").removeClass("animated slideOutRight");
+
+        // none of the editorBoxes apart of the BOLD option
+        $(".editorBoxBoldH2").css("display","block");
+        $(".boldMeH2").css("display","block");
+        $(".editorBoxRegularH2").css("display","none");
+        $(".editorBoxRegular").css("display","none");
 
     });
 });
@@ -327,41 +332,36 @@ $('.alignMeCenterH2').click(function() {
 $("h2").css("text-align", "center");
 });
 
-$('.boldMe').click(function() {
-$('h1').css ('font-weight', '700');
-$('.regularMe').css ('display', 'block');
-$('.BoldMe').css ('display', 'none');
-});
-
-$('.regularMe').click(function() {
-$('h1').css ('font-weight', '500');
-$('.regularMe').css ('display', 'none');
-$('.BoldMe').css ('display', 'block');
-});
-
-$('.boldMeH2').click(function() {
-$('h2').css ('font-weight', '700');
-$('.regularMeH2').css ('display', 'block');
-$('.boldMeH2').css ('display', 'none');
-});
-
-$('.regularMeH2').click(function() {
-$('h2').css ('font-weight', '500');
-$('.boldMeH2').css ('display', 'block');
-$('.regularMeH2').css ('display', 'none');
-});
-
-// H1 BOLD - REGULAR SELECTOR
-
 $('.editorBoxBold').click(function() {
-$('.editorBoxBold').css ('display', 'none');
+$('h1').css ('font-weight', '700');
 $('.editorBoxRegular').css ('display', 'block');
+$('.regularMe').css ('display', 'block');
+$('.editorBoxBold').css ('display', 'none');
+$('.editorBoxBold').css ('display', 'none');
 });
 
 $('.editorBoxRegular').click(function() {
-$('.editorBoxBold').css ('display', 'block');
-$('.editorBoxBold').removeClass ('slideInRight');
+$('h1').css ('font-weight', '500');
 $('.editorBoxRegular').css ('display', 'none');
+$('.regularMe').css ('display', 'none');
+$('.boldMe').css ('display', 'block');
+$('.editorBoxBold').css ('display', 'block');
+});
+
+$('.editorBoxBoldH2').click(function() {
+$('h2').css ('font-weight', '700');
+$('.regularMeH2').css ('display', 'block');
+$('.editorBoxRegularH2').css ('display', 'block');
+$('.editorBoxBoldH2').css ('display', 'none');
+$('.boldMeH2').css ('display', 'none');
+});
+
+$('.editorBoxRegularH2').click(function() {
+$('h2').css ('font-weight', '500');
+$('.boldMeH2').css ('display', 'block');
+$('.editorBoxBoldH2').css ('display', 'block');
+$('.editorBoxRegularH2').css ('display', 'none');
+$('.regularMeH2').css ('display', 'none');
 });
 
 

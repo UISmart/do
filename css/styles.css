@@ -441,7 +441,7 @@ color: rgba(255, 255, 255, 1);
 padding: 11px;
 }
 
-.editorBox, .editorBoxBold {
+.editorBox, .editorBoxBold, .editorBoxBoldH2 {
 cursor: pointer;
 position: absolute;
 top:0;
@@ -472,7 +472,7 @@ background: rgba(50, 50, 70, 0.9);
 z-index: 3;
 }
 
-.editorBoxRegular {
+.editorBoxRegular, .editorBoxRegularH2 {
 display: none;
 cursor: pointer;
 position: absolute;
