@@ -441,7 +441,7 @@ color: rgba(255, 255, 255, 1);
 padding: 11px;
 }
 
-.editorBox {
+.editorBox, .editorBoxBold {
 cursor: pointer;
 position: absolute;
 top:0;
