@@ -119,10 +119,12 @@ $('.editorClose').css ('display', 'block');
 // TRIGGER EDITOR RIGHT OFF  > //
 
 $('.editorCloseRight').click(function() {
+$('#editorRightH2').css ('display', 'none');
 $('#editorRight').removeClass ('slideInRight');
 $('#editorRight').addClass ('slideOutRight');
 $('.editorOpenRight').css ('display', 'block');
 $('.editorCloseRight').css ('display', 'none');
+$('.h1-selected').css ('display', 'none');
 });
 
 // TRIGGER EDITOR RIGHT ON  < //
@@ -132,6 +134,28 @@ $('#editorRight').removeClass ('slideOutRight');
 $('#editorRight').addClass ('slideInRight');
 $('.editorOpenRight').css ('display', 'none');
 $('.editorCloseRight').css ('display', 'block');
+$('.h1-selected').css ('display', 'block');
+});
+
+// TRIGGER EDITOR RIGHT OFF  > //
+
+$('.editorCloseRightH2').click(function() {
+$('#editorRight').css ('display', 'none');
+$('#editorRightH2').removeClass ('slideInRight');
+$('#editorRightH2').addClass ('slideOutRight');
+$('.editorOpenRightH2').css ('display', 'block');
+$('.editorCloseRightH2').css ('display', 'none');
+$('.h2-selected').css ('display', 'none');
+});
+
+// TRIGGER EDITOR RIGHT ON  < //
+
+$('.editorOpenRightH2').click(function() {
+$('#editorRightH2').removeClass ('slideOutRight');
+$('#editorRightH2').addClass ('slideInRight');
+$('.editorOpenRightH2').css ('display', 'none');
+$('.editorCloseRightH2').css ('display', 'block');
+$('.h2-selected').css ('display', 'block');
 });
 
 // COLOR PICKER
@@ -232,14 +256,18 @@ function readURL(input) {
 $(function() {
     $("h1").focus( function() {
 
+        $("#editorRightH2").hide();
         $("#editorRight").css("display","block");
-        $("#editorRightH2").css("display","none");
+        $(".editorCloseRight").css("display","block");
+        $(".editorOpenRightH2").css("display","none");
+        $(".editorCloseRightH2").css("display","none");
 
         $(".h1-selected").css("display","block");
         $(".h2-selected").css("display","none");
 
         $(".editorBox").addClass("animated slideInRight");
         $('.editorCloseRight').css("display","block");
+        $('.editorCloseRightH2').css("display","none");
 
     });
 });
@@ -249,14 +277,18 @@ $(function() {
 $(function() {
     $("h2").focus( function() {
 
-        $("#editorRight").css("display","none");
+        $("#editorRight").hide();
+        $(".editorOpenRight").css("display","none");
+        $(".editorCloseRight").css("display","none");
         $("#editorRightH2").css("display","block");
+        $(".editorCloseRighth2").css("display","block");
 
         $(".h2-selected").css("display","block");
         $(".h1-selected").css("display","none");
 
         $(".editorBox").addClass("animated slideInRight");
-        $('.editorCloseRight').css("display","block");
+        $('.editorCloseRight').css("display","none");
+        $('.editorCloseRightH2').css("display","block");
 
     });
 });

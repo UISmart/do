@@ -407,14 +407,6 @@ z-index: 999;
 border:0;
 }
 
-.boldMe, .regularMe {
-
-}
-
-.boldMe-h2, .regularMe-h2 {
-
-}
-
 .h1-selected {
 border-radius: 50%;
 display: none;
@@ -571,7 +563,7 @@ position: absolute;
 z-index:999;
 }
 
-.editorCloseRight {
+.editorCloseRight, .editorCloseRightH2 {
 position:absolute;
 top:6em;
 right: 0;
@@ -584,7 +576,7 @@ background: rgba(50, 50, 70, 0.9);
 z-index:8;
 }
 
-.editorOpenRight {
+.editorOpenRight, .editorOpenRightH2 {
 position:absolute;
 top:6em;
 right: 0;
