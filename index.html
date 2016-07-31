@@ -69,215 +69,180 @@
     </div><!-- /.container-fluid -->
   </nav>
 
-<!-- EDITOR BAR LEFT -->
+  <!-- EDITOR BAR LEFT -->
 
-    <div class="editorClose animated slideInLeft">
-    <i class="fa fa-angle-left"></i>
+      <div class="editorClose animated slideInLeft">
+      <i class="fa fa-angle-left"></i>
+      </div>
+
+      <div class="editorOpen animated fadeIn">
+      <i class="fa fa-angle-right"></i>
+      </div>
+
+      <div id="editor" class="animated slideInLeft">
+
+      <div class="editorColors">
+      <input type="hidden" id="header" class="" data-control="wheel" value="#0FFADC">
+      </div>
+
+      <div class="editorImages">
+      <i class="fa fa-camera"></i>
+      </div>
+
+      <div class="editorImagesOpen">
+      <i class="fa fa-camera"></i>
+      </div>
+
+      <div id="browse">
+
+      <label class="fileUpload">
+      <input id="uploadBtn" type="file" class="upload" accept="image/gif, image/jpeg, image/png" onchange="readURL(this);" />
+      <span class="uploadBtn">Upload</span>
+      </label>
+
+      </div>
+
+      <div class="editorOpacityOff">
+      <i class="fa fa-adjust"></i>
+      </div>
+
+      <div class="editorOpacity">
+      <i class="fa fa-adjust"></i>
+      </div>
+
+      <div id="slider" data-wjs-element="header"></div>
+      <div id="box-slider"></div>
+
+      <div class="editortrash animated flipInX">
+      <i class="fa fa-trash-o"></i>
+      </div>
+
+      <div class="editorAddJumbotron animated flipInX">
+      <i class="fa fa-plus"></i>
+      </div>
+
     </div>
+    <!-- end editor -->
 
-    <div class="editorOpen animated fadeIn">
+  <!-- EDITOR BAR RIGHT -->
+
+    <div class="editorCloseRight animated slideInRight">
     <i class="fa fa-angle-right"></i>
     </div>
 
-    <div id="editor" class="animated slideInLeft">
-
-    <div class="editorColors">
-    <input type="hidden" id="header" class="" data-control="wheel" value="#0FFADC">
+    <div class="editorOpenRight animated fadeIn">
+    <i class="fa fa-angle-left"></i>
     </div>
 
-    <div class="editorImages">
-    <i class="fa fa-camera"></i>
+    <div class="h1-selected animated infinite flash">
+    H1
     </div>
 
-    <div class="editorImagesOpen">
-    <i class="fa fa-camera"></i>
+    <!-- EDITOR BAR RIGHT  - H1-->
+    <div id="editorRight" class="animated slideInRight">
+
+    <div class="editorBox">
+    <div class="alignMeLeft">
+    <i class="fa fa-align-left"></i>
+    </div>
     </div>
 
-    <div id="browse">
-
-    <label class="fileUpload">
-    <input id="uploadBtn" type="file" class="upload" accept="image/gif, image/jpeg, image/png" onchange="readURL(this);" />
-    <span class="uploadBtn">Upload</span>
-    </label>
-
+    <div class="editorBox row-2">
+    <div class="alignMeCenter">
+    <i class="fa fa-align-center"></i>
+    </div>
     </div>
 
-    <div class="editorOpacityOff">
-    <i class="fa fa-adjust"></i>
+    <div class="editorBox row-3">
+    <div class="alignMeRight">
+    <i class="fa fa-align-right"></i>
+    </div>
     </div>
 
-    <div class="editorOpacity">
-    <i class="fa fa-adjust"></i>
+    <div class="editorBox row-4">
+    <div class="boldMe animated flipInX">
+    <i class="fa fa-bold"></i>
+    </div>
     </div>
 
-    <div id="slider" data-wjs-element="header"></div>
-    <div id="box-slider"></div>
-
-    <div class="editortrash">
-    <i class="fa fa-trash-o"></i>
+    <div class="editorBoxRegular">
+    <div class="regularMe animated flipInX">
+    <i class="fa fa-undo"></i>
+    </div>
     </div>
 
-    <div class="editorAddJumbotron animated flipInX">
+    <div class="editorBox row-5">
+    <input type="hidden" id="h1" class="" data-control="wheel" value="#0FFADC">
+    </div>
+
+    <div class="editorBox row-6">
+    <i class="fa fa-font"></i>
+    </div>
+
+    <div class="editorBoxOff">
+    <i class="fa fa-font"></i>
+    </div>
+
+    <div id="browseFonts" class="animated fadeIn">
+    <input id="font" type="text">
+    </div>
+
+    <div id="plus-minus" class="animated fadeIn">
+
+    <div class="plusFont">
     <i class="fa fa-plus"></i>
     </div>
 
-  </div>
-  <!-- end editor -->
+    <div class="minusFont">
+    <i class="fa fa-minus"></i>
+    </div>
 
-<!-- EDITOR BAR RIGHT -->
+    </div>
+    <!-- end plus-minus-->
 
-  <div class="editorCloseRight animated slideInRight">
-  <i class="fa fa-angle-right"></i>
-  </div>
+    </div>
+    <!-- end editorRight -->
 
-  <div class="editorOpenRight animated fadeIn">
-  <i class="fa fa-angle-left"></i>
-  </div>
 
-  <div id="editorRight" class="animated slideInRight">
+    <!-- flashing h2-editor -->
+    <div class="h2-selected animated infinite flash">
+    H2
+    </div>
 
-  <!-- h1-editor -->
-  <div class="h1-selected animated infinite flash">
-  H1
-  </div>
+    <div id="editorRightH2" class="animated slideInRight">
 
-  <!-- h2-editor -->
-  <div class="h2-selected animated infinite flash">
-  H2
-  </div>
+    <div class="editorBox">
+    <div class="alignMeLeftH2">
+    <i class="fa fa-align-left"></i>
+    </div>
+    </div>
 
-  <div class="h1-editor">
-  <div class="alignMeLeft">
-  <i class="fa fa-align-left"></i>
-  </div>
-  </div>
+    <div class="editorBox row-2">
+    <div class="alignMeCenterH2">
+    <i class="fa fa-align-center"></i>
+    </div>
+    </div>
 
-  <div class="h1-editor row-2">
-  <div class="alignMeCenter">
-  <i class="fa fa-align-center"></i>
-  </div>
-  </div>
+    <div class="editorBox row-3">
+    <div class="alignMeRightH2">
+    <i class="fa fa-align-right"></i>
+    </div>
+    </div>
 
-  <div class="h1-editor row-3">
-  <div class="alignMeRight">
-  <i class="fa fa-align-right"></i>
-  </div>
-  </div>
+    <div class="editorBox row-4">
+    <div class="boldMeH2 animated flipInX">
+    <i class="fa fa-bold"></i>
+    </div>
+    </div>
 
-  <div class="alignMeLeft-h2">
-  <i class="fa fa-align-left"></i>
-  </div>
+    <div class="editorBoxRegular">
+    <div class="regularMeH2 animated flipInX">
+    <i class="fa fa-undo"></i>
+    </div>
+    </div>
 
-  <div class="alignMeCenter-h2 row-2">
-  <i class="fa fa-align-center"></i>
-  </div>
-
-  <div class="alignMeRight-h2 row-3">
-  <i class="fa fa-align-right"></i>
-  </div>
-
-  <div id="plus-minus" class="animated fadeIn">
-
-  <div class="plusFont">
-  <i class="fa fa-plus"></i>
-  </div>
-
-  <div class="minusFont">
-  <i class="fa fa-minus"></i>
-  </div>
-
-  </div>
-  <!-- end plus-minus-->
-
-  <div class="h1-editor row-4">
-  <div class="boldMe animated flipInX">
-  <i class="fa fa-bold"></i>
-  </div>
-  </div>
-
-  <div class="h1-editorRegular">
-  <div class="regularMe animated flipInX">
-  <i class="fa fa-undo"></i>
-  </div>
-  </div>
-
-  <div class="boldMe-h2 row-4 animated flipInX">
-  <i class="fa fa-bold"></i>
-  </div>
-
-  <div class="regularMe-h2 row-4 animated flipInX">
-  <i class="fa fa-undo"></i>
-  </div>
-
-  <div class="h1-editor row-5">
-  <input type="hidden" id="h1" class="" data-control="wheel" value="#0FFADC">
-  </div>
-
-  <div class="h1-editor row-6">
-  <i class="fa fa-font"></i>
-  </div>
-
-  <div class="h1-editorOff">
-  <i class="fa fa-font"></i>
-  </div>
-
-  <div id="browseFonts" class="animated fadeIn">
-  <input id="font" type="text">
-  </div>
-
-  </div>
-  <!-- end h2-editor -->
-
-  </div>
-  <!-- end editorRight -->
-
-  <div id="editorRight-h2" class="animated slideInRight">
-
-  <!-- h2-editor -->
-  <div class="h2-selected animated infinite flash">
-  H2
-  </div>
-
-  <div class="h2-editor">
-  <div class="alignMeLeft">
-  <i class="fa fa-align-left"></i>
-  </div>
-  </div>
-
-  <div class="h2-editor row-2">
-  <div class="alignMeCenter">
-  <i class="fa fa-align-center"></i>
-  </div>
-  </div>
-
-  <div class="h2-editor row-3">
-  <div class="alignMeRight">
-  <i class="fa fa-align-right"></i>
-  </div>
-  </div>
-
-  <div class="h2-editor row-4">
-  <div class="boldMe">
-  <i class="fa fa-bold"></i>
-  </div>
-  </div>
-
-  <div class="h2-editor row-5">
-  <input type="hidden" id="h1" class="" data-control="wheel" value="#0FFADC">
-  </div>
-
-  <div class="h2-editor row-6">
-  <i class="fa fa-font"></i>
-
-  <div id="browseFonts" class="animated fadeIn">
-  <input id="font" type="text">
-  </div>
-
-  </div>
-  <!-- end h2-editor -->
-
-</div>
-<!-- end editorRight-h2 -->
+    </div>
+    <!-- end editorRightH2 -->
 
 
 <!-- THE CONTENT -->

@@ -162,7 +162,7 @@ $('.h1colour').css("color", newCol);
 
 // POSITIONING MINICOLORS-PANELS
 
-$('.h1-editor.row-5').click(function() {
+$('.editorBox.row-5').click(function() {
 $('div.minicolors.minicolors-theme-default').removeClass ('minicolors-position-left');
 $('div.minicolors.minicolors-theme-default').addClass ('minicolors-position-right');
 });
@@ -186,7 +186,7 @@ $('.editortrash').css('display', 'block');
 // DELETE JUMBOTRON.
 
 $('.editortrash').click(function() {
-$('.jumbotron').show().delay(200).fadeOut();
+$('.jumbotron').show().delay(500).fadeOut();
 $('.editorAddJumbotron').css('display', 'block');
 $('.editortrash').css('display', 'none');
 });
@@ -231,15 +231,37 @@ function readURL(input) {
 
 $(function() {
     $("h1").focus( function() {
-        $(".h1-editor").css("display","block");
-        $(".h2-editor").css("display","none");
-        $(".h1-editor").addClass("animated slideInRight");
+
+        $("#editorRight").css("display","block");
+        $("#editorRightH2").css("display","none");
+
+        $(".h1-selected").css("display","block");
+        $(".h2-selected").css("display","none");
+
+        $(".editorBox").addClass("animated slideInRight");
         $('.editorCloseRight').css("display","block");
-        $('.h1-selected').css("display","block");
-        $('.h2-selected').css("display","none");
-        $('.regularMe').css("display","none");
+
     });
 });
+
+// H2 EDITOR.
+
+$(function() {
+    $("h2").focus( function() {
+
+        $("#editorRight").css("display","none");
+        $("#editorRightH2").css("display","block");
+
+        $(".h2-selected").css("display","block");
+        $(".h1-selected").css("display","none");
+
+        $(".editorBox").addClass("animated slideInRight");
+        $('.editorCloseRight').css("display","block");
+
+    });
+});
+
+
 
 // H1/H2 ALIGNMENT + FONT WEIGHT
 
@@ -247,23 +269,23 @@ $('.alignMeLeft').click(function() {
 $("h1").css("text-align", "left");
 });
 
+$('.alignMeLeftH2').click(function() {
+$("h2").css("text-align", "left");
+});
+
 $('.alignMeRight').click(function() {
 $("h1").css("text-align", "right");
+});
+
+$('.alignMeRightH2').click(function() {
+$("h2").css("text-align", "right");
 });
 
 $('.alignMeCenter').click(function() {
 $("h1").css("text-align", "center");
 });
 
-$('.alignMeLeft-h2').click(function() {
-$("h2").css("text-align", "left");
-});
-
-$('.alignMeRight-h2').click(function() {
-$("h2").css("text-align", "right");
-});
-
-$('.alignMeCenter-h2').click(function() {
+$('.alignMeCenterH2').click(function() {
 $("h2").css("text-align", "center");
 });
 
@@ -279,29 +301,29 @@ $('.regularMe').css ('display', 'none');
 $('.BoldMe').css ('display', 'block');
 });
 
-$('.boldMe-h2').click(function() {
+$('.boldMeH2').click(function() {
 $('h2').css ('font-weight', '700');
-$('.regularMe-h2').css ('display', 'block');
-$('.boldMe-h2').css ('display', 'none');
+$('.regularMeH2').css ('display', 'block');
+$('.boldMeH2').css ('display', 'none');
 });
 
-$('.regularMe-h2').click(function() {
+$('.regularMeH2').click(function() {
 $('h2').css ('font-weight', '500');
-$('.boldMe-h2').css ('display', 'block');
-$('.regularMe-h2').css ('display', 'none');
+$('.boldMeH2').css ('display', 'block');
+$('.regularMeH2').css ('display', 'none');
 });
 
 // H1 BOLD - REGULAR SELECTOR
 
-$('.h1-editor.row-4').click(function() {
-$('.h1-editor.row-4').css ('display', 'none');
-$('.h1-editorRegular').css ('display', 'block');
+$('.editorBox.row-4').click(function() {
+$('.editorBox.row-4').css ('display', 'none');
+$('.editorBoxRegular').css ('display', 'block');
 });
 
-$('.h1-editorRegular').click(function() {
-$('.h1-editor.row-4').css ('display', 'block');
-$('.h1-editor.row-4').removeClass ('slideInRight');
-$('.h1-editorRegular').css ('display', 'none');
+$('.editorBoxRegular').click(function() {
+$('.editorBox.row-4').css ('display', 'block');
+$('.editorBox.row-4').removeClass ('slideInRight');
+$('.editorBoxRegular').css ('display', 'none');
 });
 
 
@@ -327,18 +349,18 @@ $('.fs-drop').addClass ('animated fadeIn');
 
 // FONT SELECTOR VISIBLE
 
-$('.h1-editor.row-6').click(function() {
+$('.editorBox.row-6').click(function() {
 $('#browseFonts').css ('display', 'block');
 $('#plus-minus').css ('display', 'block');
-$('.h1-editor.row-6').css ('display', 'none');
-$('.h1-editorOff').css ('display', 'block');
+$('.editorBox.row-6').css ('display', 'none');
+$('.editorBoxOff').css ('display', 'block');
 });
 
-$('.h1-editorOff').click(function() {
+$('.editorBoxOff').click(function() {
 $('#browseFonts').css ('display', 'none');
-$('.h1-editor.row-6').css ('display', 'block');
-$('.h1-editor.row-6').removeClass ('slideInRight');
-$('.h1-editorOff').css ('display', 'none');
+$('.editorBox.row-6').css ('display', 'block');
+$('.editorBox.row-6').removeClass ('slideInRight');
+$('.editorBoxOff').css ('display', 'none');
 $('#plus-minus').css ('display', 'none');
 });
 
@@ -360,48 +382,6 @@ $('.minusFont').click(function() {
   fontSize = fontSize - 1 + "px";
   $("h1").css({'font-size':fontSize});
 
-});
-
-// H1 EDITOR.
-
-$(function() {
-    $("h1").focus( function() {
-        $(".h1-selected").css("display","block");
-        $(".h2-selected").css("display","none");
-        $(".alignMeLeft").css("display","block");
-        $(".alignMeCenter").css("display","block");
-        $(".alignMeRight").css("display","block");
-        $(".alignMeLeft-h2").css("display","none");
-        $(".alignMeCenter-h2").css("display","none");
-        $(".alignMeRight-h2").css("display","none");
-
-        $(".h1-editorRegular").css("display","none");
-        $("*").removeClass("slideInRight");
-
-        $(".boldMe").css("display","block");
-        $(".regularMe").css("display","none");
-        $(".boldMe-h2").css("display","none");
-        $(".regularMe-h2").css("display","none");
-  });
-});
-
-// H2 EDITOR.
-
-$(function() {
-    $("h2").focus( function() {
-        $(".h1-selected").css("display","none");
-        $(".h2-selected").css("display","block");
-        $(".alignMeLeft").css("display","none");
-        $(".alignMeCenter").css("display","none");
-        $(".alignMeRight").css("display","none");
-        $(".alignMeLeft-h2").css("display","block");
-        $(".alignMeCenter-h2").css("display","block");
-        $(".alignMeRight-h2").css("display","block");
-        $(".boldMe-h2").css("display","block");
-        $(".boldMe").css("display","none");
-        $(".regularMe-h2").css("display","none");
-        $(".regularMe").css("display","none");
-  });
 });
 
 // STORE THE DESIGN

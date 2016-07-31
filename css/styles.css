@@ -20,7 +20,7 @@ font-size: 2rem;
 background: rgba(255, 255, 255, 0.7);
 }
 
-.content {
+.container-header {
 width: 100%;
 }
 
@@ -376,40 +376,43 @@ transition-duration: 1s;
 ========================================================
 */
 
-#editorRight {
+#editor {
 position: absolute;
-right:0;
-top:8.25em;
-width:5em;
-z-index: 999;
-border:0;
-}
-
-#editorRight-h2 {
-position: absolute;
-right:0;
+left:0;
 top:8.25em;
 width:5em;
 z-index: 3;
 border:0;
 }
 
-.alignMeLeft-h2, .alignMeCenter-h2, .alignMeRight-h2 {
-display: none;
-position:absolute;
-z-index:2;
+#editorRight {
+display:none;
+position: absolute;
+right:0;
+top:8.25em;
+width:5em;
+background: rgba(50, 50, 70, 0.9);
+z-index: 999;
+border:0;
+}
+
+#editorRightH2 {
+display:none;
+position: absolute;
+right:0;
+top:8.25em;
+width:5em;
+background: rgba(50, 50, 70, 0.9);
+z-index: 999;
+border:0;
 }
 
 .boldMe, .regularMe {
-display: none;
-position:absolute;
-z-index:999;
+
 }
 
 .boldMe-h2, .regularMe-h2 {
-display: none;
-position:absolute;
-z-index:999;
+
 }
 
 .h1-selected {
@@ -417,7 +420,7 @@ border-radius: 50%;
 display: none;
 cursor: pointer;
 position: absolute;
-top: .5em;
+top: 4.85em;
 right: 4.5em;
 width: 2.5em;
 height: 2.5em;
@@ -434,7 +437,7 @@ border-radius: 50%;
 display: none;
 cursor: pointer;
 position: absolute;
-top: .5em;
+top: 4.85em;
 right: 4.5em;
 width: 2.5em;
 height: 2.5em;
@@ -446,8 +449,7 @@ color: rgba(255, 255, 255, 1);
 padding: 11px;
 }
 
-.h1-editor {
-display: none;
+.editorBox {
 cursor: pointer;
 position: absolute;
 top:0;
@@ -459,13 +461,13 @@ background: rgba(50, 50, 70, 0.7);
 z-index: 1;
 }
 
-.h1-editor:hover, .h1-editorRegular:hover {
+.editorBox:hover, .editorBoxRegular:hover {
 background: rgba(50, 50, 70, 0.9);
 -webkit-transition-duration: 1s; /* Safari */
 transition-duration: 1s;
 }
 
-.h1-editorOff {
+.editorBoxOff {
 display: none;
 cursor: pointer;
 position: absolute;
@@ -478,7 +480,7 @@ background: rgba(50, 50, 70, 0.9);
 z-index: 3;
 }
 
-.h1-editorRegular {
+.editorBoxRegular {
 display: none;
 cursor: pointer;
 position: absolute;
