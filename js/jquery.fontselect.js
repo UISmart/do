@@ -25,7 +25,7 @@
       "Pattaya",
       "Parisienne",
       "Questrial",
-	    "Roboto", 
+	    "Roboto",
       "Suez One",
       "Raleway",
       "Roboto Slab",
@@ -34,7 +34,7 @@
 
     var settings = {
       style: 'font-select',
-      placeholder: 'Select a font',
+      placeholder: 'Choose Font',
       lookahead: 2,
       api: 'https://fonts.googleapis.com/css?family='
     };
@@ -125,7 +125,7 @@
 
         this.$original.empty().hide();
         this.$element = $('<div>', {'class': this.options.style});
-        this.$arrow = $('<div><b></b></div>');
+        this.$arrow = $('<div><i class="fa fa-chevron-down" aria-hidden="true"></i></div>');
         this.$select = $('<a><span>'+ this.options.placeholder +'</span></a>');
         this.$drop = $('<div>', {'class': 'fs-drop'});
         this.$results = $('<ul>', {'class': 'fs-results'});

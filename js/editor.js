@@ -14,30 +14,30 @@ $(editor).append("<div class='editor'>\
 
 // editor right
 $(editor).append("<div id='editorRight'>\
-<div class='h1-selected animated infinite flash'>H1</div>\
+<div class='fontH1'><i class='fa fa-font'></i></div>\
+<div class='editorBoxOff'><i class='fa fa-font'></i></div>\
 <div class='alignMeLeft'><i class='fa fa-align-left'></i></div>\
 <div class='alignMeCenter'><i class='fa fa-align-center'></i></div>\
 <div class='alignMeRight'><i class='fa fa-align-right'></i></div>\
 <div class='editorBoxBold animated flipInX'><i class='fa fa-bold'></i></div>\
 <div class='editorBoxRegular animated flipInX'><i class='fa fa-undo'></i></div>\
 <div class='colorH1'></div>\
-<div class='fontH1'><i class='fa fa-font'></i></div>\
-<div class='editorBoxOff'><i class='fa fa-font'></i></div>\
 <div id='browseFonts' class='animated fadeIn'><input id='font' type='text'></div>\
+<div id='plus-minus' class='animated fadeIn'><div class='plusFont'><i class='fa fa-plus white'></i></div><div class='minusFont'><i class='fa fa-minus'></i></div>\
 </div>");
 
 // editor right
 $(editor).append("<div id='editorRightH2'>\
-<div class='h2-selected animated infinite flash'>H2</div>\
+<div class='fontH2'><i class='fa fa-font'></i></div>\
+<div class='editorBoxOffH2'><i class='fa fa-font'></i></div>\
 <div class='alignMeLeftH2'><i class='fa fa-align-left'></i></div>\
 <div class='alignMeCenterH2'><i class='fa fa-align-center'></i></div>\
 <div class='alignMeRightH2'><i class='fa fa-align-right'></i></div>\
 <div class='editorBoxBoldH2 animated flipInX'><i class='fa fa-bold'></i></div>\
 <div class='editorBoxRegularH2 animated flipInX'><i class='fa fa-undo'></i></div>\
 <div class='colorH2'></div>\
-<div class='fontH2'><i class='fa fa-font'></i></div>\
-<div class='editorBoxOffH2'><i class='fa fa-font'></i></div>\
 <div id='browseFontsH2' class='animated fadeIn'><input id='fontH2' type='text'></div>\
+<div id='plus-minusH2' class='animated fadeIn'><div class='plusFontH2'><i class='fa fa-plus white'></i></div><div class='minusFontH2'><i class='fa fa-minus'></i></div>\
 </div>");
 
 // editor IN
@@ -102,12 +102,17 @@ $(".editorOpacityOff").append('<i class="fa fa-adjust"></i>');
     $(".editortrash").append('<i class="fa fa-trash-o"></i>');
     $(".editorAddJumbotron").append('<i class="fa fa-plus"></i>');
 
-    // delete jumbotron
+    // delete jumbotron + some elements on menu
 
     $('.editortrash').click(function() {
     $('.jumbotron').show().delay(500).fadeOut();
     $('.editorAddJumbotron').css('display', 'block');
     $('.editortrash').css('display', 'none');
+    $('.editorColors').css('display', 'none');
+    $('.editorImages').css('display', 'none');
+    $('.editorImagesClose').css('display', 'none');
+    $('#editorRight').css('display', 'none');
+    $('#editorRightH2').css('display', 'none');
     });
 
     // add jumbotron
@@ -116,6 +121,12 @@ $(".editorOpacityOff").append('<i class="fa fa-adjust"></i>');
     $('.jumbotron').show().delay(500).fadeIn();
     $('.editorAddJumbotron').css('display', 'none');
     $('.editortrash').css('display', 'block');
+    $('.editorColors').css('display', 'block');
+    $('.editorImages').css('display', 'block');
+    $('.editorImagesClose').css('display', 'block');
+    $('#editorRight').css('display', 'block');
+    $('#editorRightClose').css('display', 'block');
+    $('.fontH1').css('display', 'block');
     });
 
     // H1 EDITOR.
@@ -128,9 +139,6 @@ $(".editorOpacityOff").append('<i class="fa fa-adjust"></i>');
             $(".editorCloseRight").css("display","block");
             $(".editorOpenRightH2").css("display","none");
             $(".editorCloseRightH2").css("display","none");
-
-            $(".h1-selected").css("display","block");
-            $(".h2-selected").css("display","none");
 
             $("#editorRight").addClass("animated slideInRight");
             $("#editorRightH2").removeClass("animated slideOutRight");
@@ -155,9 +163,6 @@ $(".editorOpacityOff").append('<i class="fa fa-adjust"></i>');
             $(".editorOpenRight").css("display","none");
             $(".editorCloseRight").css("display","none");
             $(".editorCloseRightH2").css("display","block");
-
-            $(".h2-selected").css("display","block");
-            $(".h1-selected").css("display","none");
 
             $("#editorRightH2").addClass("animated slideInRight");
             $("#editorRight").removeClass("animated slideOutRight");
@@ -248,7 +253,7 @@ $(".editorOpacityOff").append('<i class="fa fa-adjust"></i>');
 
     $('.fontH2').click(function() {
     $('#browseFontsH2').css ('display', 'block');
-    $('#plus-minus').css ('display', 'block');
+    $('#plus-minusH2').css ('display', 'block');
     $('.fontH2').css ('display', 'none');
     $('.editorBoxOffH2').css ('display', 'block');
     });
@@ -258,7 +263,7 @@ $(".editorOpacityOff").append('<i class="fa fa-adjust"></i>');
     $('.fontH2').css ('display', 'block');
     $('.fontH2').removeClass ('slideInRight');
     $('.editorBoxOffH2').css ('display', 'none');
-    $('#plus-minus').css ('display', 'none');
+    $('#plus-minusH2').css ('display', 'none');
     });
 
     // FONT SELECTOR
@@ -321,8 +326,29 @@ $(".editorOpacityOff").append('<i class="fa fa-adjust"></i>');
 
     });
 
+    // FONT SIZE - H2
+
+    $('.plusFontH2').click(function() {
+    // The parseInt() function parses a string and returns an integer
+
+      var fontSize = parseInt($("h2").css("font-size"));
+      fontSize = fontSize + 1 + "px";
+      $("h2").css({'font-size':fontSize});
+
+    });
+
+    $('.minusFontH2').click(function() {
+    // The parseInt() function parses a string and returns an integer
+
+      var fontSize = parseInt($("h2").css("font-size"));
+      fontSize = fontSize - 1 + "px";
+      $("h2").css({'font-size':fontSize});
+
+    });
+
 
 });
+
 
 // editor colors
 
