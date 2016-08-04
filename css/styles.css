@@ -30,11 +30,12 @@ font-family: "brandon-grotesque", sans-serif;
 
 h3 {
 text-align: center;
-font-size: 3em;
+font-size: 4em;
 font-weight: 400;
 font-family: "brandon-grotesque", sans-serif;
 margin-bottom: 1em;
-color:#e74c3c;
+/* color:#e74c3c; */
+color:yellow;
 }
 
 p.grid {
@@ -52,7 +53,7 @@ color:#fff;
 */
 
 ::selection {
-background:#0FFADC;
+background: gray;
 }
 
 .container-header {
@@ -114,7 +115,7 @@ outline: 1px dashed rgba(255, 255, 255, 0.7);
 }
 
 h3:focus {
-outline: 1px dashed rgba(0, 0, 0, 0.3);
+outline: 1px dashed rgba(255, 255, 255, 0.5);
 }
 
 .col-md-4:focus {
@@ -170,7 +171,7 @@ z-index:2;
 }
 
 .navbar-default {
-background: rgb(50, 50, 70);
+background: rgb(30, 30, 50);
 padding-top: 1em;
 border:0;
 border-radius: 0;
@@ -666,7 +667,7 @@ z-index:8;
 
 /*
 ========================================================
-03.15 EDITOR LEFT THE GRID
+03.11 EDITOR LEFT THE GRID
 ========================================================
 */
 
@@ -704,10 +705,39 @@ padding-top: 24px;
 .col-line {
 margin:0 2px;
 float:left;
-width: 4px;
+width: 3px;
 height: 1.5em;
 background: #fff;
-border-radius: 2px;
+}
+
+/*
+========================================================
+03.12 COLUMNS THE GRID
+========================================================
+*/
+
+.OneColumnLayout {
+-webkit-column-count: 1; /* Chrome, Safari, Opera */
+-moz-column-count: 1; /* Firefox */
+column-count: 1;
+}
+
+.TwoColumnLayout {
+-webkit-column-count: 2; /* Chrome, Safari, Opera */
+-moz-column-count: 2; /* Firefox */
+column-count: 2;
+}
+
+.ThreeColumnLayout {
+-webkit-column-count: 3; /* Chrome, Safari, Opera */
+-moz-column-count: 3; /* Firefox */
+column-count: 3;
+}
+
+.FourColumnLayout {
+-webkit-column-count: 4; /* Chrome, Safari, Opera */
+-moz-column-count: 4; /* Firefox */
+column-count: 4;
 }
 
 /*

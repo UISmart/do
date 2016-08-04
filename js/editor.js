@@ -56,26 +56,32 @@ $('.editorGridLeft').append("<div class='col1'><div class='col-lines'><div class
 // editor left - the grid - changing columns
 
 $('.col1').click(function() {
-$('.col-md-4').removeClass ('col-md-4');
-$('.col-md-4').addClass ('col-md-12');
+$('.OneColumnLayout').toggleClass ('OneColumnLayout OneColumnLayout');
+$('.TwoColumnLayout').toggleClass ('TwoColumnLayout OneColumnLayout');
+$('.ThreeColumnLayout').toggleClass ('ThreeColumnLayout OneColumnLayout');
+$('.FourColumnLayout').toggleClass ('FourColumnLayout OneColumnLayout');
 });
 
 
 $('.col2').click(function() {
-$('.col-md-4').removeClass ('col-md-4');
-$('.col-md-4').removeClass ('col-md-12');
-$('.col-md-4').removeClass ('col-md-3');
-$('.col-md-4').addClass ('col-md-6');
+$('.OneColumnLayout').toggleClass ('OneColumnLayout TwoColumnLayout');
+$('.TwoColumnLayout').toggleClass ('TwoColumnLayout TwoColumnLayout');
+$('.ThreeColumnLayout').toggleClass ('ThreeColumnLayout TwoColumnLayout');
+$('.FourColumnLayout').toggleClass ('FourColumnLayout TwoColumnLayout');
 });
 
 $('.col3').click(function() {
-$('.col-md-4').removeClass ('col-md-4');
-$('.col-md-4').addClass ('col-md-4');
+$('.OneColumnLayout').toggleClass ('OneColumnLayout ThreeColumnLayout');
+$('.TwoColumnLayout').toggleClass ('TwoColumnLayout ThreeColumnLayout');
+$('.ThreeColumnLayout').toggleClass ('ThreeColumnLayout ThreeColumnLayout');
+$('.FourColumnLayout').toggleClass ('FourColumnLayout ThreeColumnLayout');
 });
 
-$('.col3').click(function() {
-$('.col-md-4').removeClass ('col-md-4');
-$('.col-md-4').addClass ('col-md-3');
+$('.col4').click(function() {
+$('.OneColumnLayout').toggleClass ('OneColumnLayout FourColumnLayout');
+$('.TwoColumnLayout').toggleClass ('TwoColumnLayout FourColumnLayout');
+$('.ThreeColumnLayout').toggleClass ('ThreeColumnLayout FourColumnLayout');
+$('.FourColumnLayout').toggleClass ('FourColumnLayout FourColumnLayout');
 });
 
 
