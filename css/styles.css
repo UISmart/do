@@ -6,31 +6,43 @@ a:link, a:visited, a:hover, a:active {
 text-decoration:none;
 }
 
+/*
+========================================================
+TYPOGRAPHY
+========================================================
+*/
+
+* {
+font-family: "brandon-grotesque", sans-serif;
+}
+
 h1 {
 font-size: 4em;
 font-weight: 400;
-font-family: 'Raleway', sans-serif;
+font-family: "brandon-grotesque", sans-serif;
 }
 
-h2 {
-font-size: 3em;
+.jumbotron h2 {
+font-size: 2em;
 font-weight: 400;
-font-family: 'Raleway', sans-serif;
+font-family: "brandon-grotesque", sans-serif;
 }
 
 h3 {
 text-align: center;
 font-size: 3em;
 font-weight: 400;
-font-family: 'Raleway', sans-serif;
+font-family: "brandon-grotesque", sans-serif;
 margin-bottom: 1em;
+color:#e74c3c;
 }
 
-p {
+p.grid {
 font-family: 'Work Sans', sans-serif;
 font-size:18px;
 line-height: 30px;
 font-weight:300;
+color:#fff;
 }
 
 /*
@@ -40,7 +52,7 @@ font-weight:300;
 */
 
 ::selection {
-background: #0FFADC;
+background:#0FFADC;
 }
 
 .container-header {
@@ -49,7 +61,6 @@ width: 100%;
 
 #brand-name {
 font-weight: 400;
-font-family: 'Montserrat', sans-serif;
 }
 
 #content {
@@ -176,10 +187,8 @@ margin-bottom: 1em;
 .navbar-default .navbar-brand,
 .navbar-default .navbar-brand:visited,
 .navbar-default .navbar-brand:active {
-font-weight: bold;
 color:rgb(252, 252, 252);
-font-size: 3rem;
-letter-spacing: .2rem;
+font-size: 2em;
 }
 
 .navbar-default .navbar-brand:hover {
@@ -204,6 +213,7 @@ color:rgb(252, 252, 252);
 .navbar-default .navbar-nav>li>a:visited,
 .navbar-default .navbar-nav>li>a:active {
 color:rgb(252, 252, 252);
+font-size: 1.25em;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
@@ -222,7 +232,7 @@ margin-bottom: 0;
 .jumbotron h1 {
 padding: 4px 0;
 text-align: center;
-color:#fff;
+color:#0FFADC;
 }
 
 .jumbotron p {
@@ -307,6 +317,7 @@ border:0;
 }
 
 .editor {
+display: none;
 position: absolute;
 left:0;
 top:7em;
@@ -591,14 +602,6 @@ transition-duration: 1s;
 height: 5em;
 }
 
-.row-2 {
-top:5em;
-}
-
-.row-3 {
-top:10em;
-}
-
 #plus-minus, #plus-minusH2 {
 display: none;
 position: absolute;
@@ -659,6 +662,52 @@ width:5em;
 height: 2.25em;
 background: rgba(50, 50, 70, 0.9);
 z-index:8;
+}
+
+/*
+========================================================
+03.15 EDITOR LEFT THE GRID
+========================================================
+*/
+
+.editorGridLeft {
+display: none;
+position:relative;
+top:2em;
+left:0;
+width:5em;
+}
+
+.col1, .col2, .col3, .col4 {
+cursor: pointer;
+float: left;
+width:5em;
+height: 5em;
+background: rgba(30, 30, 50, 0.7);
+}
+
+.col1:hover, .col2:hover, .col3:hover, .col4:hover {
+cursor: pointer;
+float: left;
+width:5em;
+height: 5em;
+background: rgba(30, 30, 50, 0.9);
+-webkit-transition-duration: 1s; /* Safari */
+transition-duration: 1s;
+}
+
+.col-lines {
+padding: 14px;
+padding-top: 24px;
+}
+
+.col-line {
+margin:0 2px;
+float:left;
+width: 4px;
+height: 1.5em;
+background: #fff;
+border-radius: 2px;
 }
 
 /*
@@ -1064,7 +1113,7 @@ background: rgb(15, 250, 220) !important;
 */
 
 section {
-background: #fff;
+background: rgba(50, 50, 70, 1);
 padding: 3em;
 }
 

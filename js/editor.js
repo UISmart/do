@@ -40,6 +40,45 @@ $(editor).append("<div id='editorRightH2'>\
 <div id='plus-minusH2' class='animated fadeIn'><div class='plusFontH2'><i class='fa fa-plus white'></i></div><div class='minusFontH2'><i class='fa fa-minus'></i></div>\
 </div>");
 
+// editor left - the grid
+
+$('#theGrid').append("<div class='editorGridLeft animated slideInLeft'></div>");
+$( ".editorGridLeft" ).insertBefore ( $( "#theGrid" ) );
+
+
+// editor left - the grid - columns
+
+$('.editorGridLeft').append("<div class='col1'><div class='col-lines'><div class='col-line'></div></div></div>\
+<div class='col2'><div class='col-lines'><div class='col-line'></div><div class='col-line'></div></div></div>\
+<div class='col3'><div class='col-lines'><div class='col-line'></div><div class='col-line'></div><div class='col-line'></div></div></div>\
+<div class='col4'><div class='col-lines'><div class='col-line'></div><div class='col-line'></div><div class='col-line'></div><div class='col-line'></div></div></div>");
+
+// editor left - the grid - changing columns
+
+$('.col1').click(function() {
+$('.col-md-4').removeClass ('col-md-4');
+$('.col-md-4').addClass ('col-md-12');
+});
+
+
+$('.col2').click(function() {
+$('.col-md-4').removeClass ('col-md-4');
+$('.col-md-4').removeClass ('col-md-12');
+$('.col-md-4').removeClass ('col-md-3');
+$('.col-md-4').addClass ('col-md-6');
+});
+
+$('.col3').click(function() {
+$('.col-md-4').removeClass ('col-md-4');
+$('.col-md-4').addClass ('col-md-4');
+});
+
+$('.col3').click(function() {
+$('.col-md-4').removeClass ('col-md-4');
+$('.col-md-4').addClass ('col-md-3');
+});
+
+
 // editor IN
 $('.editor').addClass ('animated slideInLeft');
 
@@ -110,6 +149,7 @@ $(".editorOpacityOff").append('<i class="fa fa-adjust"></i>');
     $('.editortrash').css('display', 'none');
     $('.editorColors').css('display', 'none');
     $('.editorImages').css('display', 'none');
+    $('.browse').css('display', 'none');
     $('.editorImagesClose').css('display', 'none');
     $('#editorRight').css('display', 'none');
     $('#editorRightH2').css('display', 'none');
@@ -447,4 +487,22 @@ $(document).ready(function() {
   $('div.minicolors.minicolors-theme-default').addClass ('minicolors-position-right');
   });
 
+});
+
+// MENU APPAREANCE
+
+$(function() {
+    $(".jumbotron").hover( function() {
+
+        $(".editor").css("display","block");
+
+    });
+});
+
+$(function() {
+    $("#theGrid").hover( function() {
+
+        $(".editorGridLeft").css("display","block");
+
+    });
 });

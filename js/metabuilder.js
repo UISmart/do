@@ -39,6 +39,13 @@ $(function(){
     $('h1').prop('contenteditable',!isEditable).toggleClass('editable');
 })
 
+// EDITABLE NAVBAR
+
+$(function(){
+    var $div=$('.navbar-nav>li>a'), isEditable=$div.is('.editable');
+    $('.navbar-nav>li>a').prop('contenteditable',!isEditable).toggleClass('editable');
+})
+
 // EDITABLE H3
 
 $(function(){
