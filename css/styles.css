@@ -13,32 +13,32 @@ TYPOGRAPHY
 */
 
 * {
-font-family: "brandon-grotesque", sans-serif;
+font-family: "brandon-grotesque", Helvetica, Arial, sans-serif;
 }
 
 h1 {
 font-size: 4em;
 font-weight: 400;
-font-family: "brandon-grotesque", sans-serif;
+font-family: "brandon-grotesque", Helvetica, Arial, sans-serif;
 }
 
 .jumbotron h2 {
 font-size: 2em;
 font-weight: 400;
-font-family: "brandon-grotesque", sans-serif;
+font-family: "brandon-grotesque", Helvetica, Arial, sans-serif;
 }
 
 h3 {
 text-align: center;
 font-size: 3em;
 font-weight: 400;
-font-family: "brandon-grotesque", sans-serif;
+font-family: "brandon-grotesque", Helvetica, Arial, sans-serif;
 margin-bottom: 1em;
 color:#e74c3c;
 }
 
 p.grid {
-font-family: 'Work Sans', sans-serif;
+font-family: 'Work Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 font-size:18px;
 line-height: 30px;
 font-weight:300;
@@ -1024,8 +1024,8 @@ display: none;
 }
 
 .minicolors-position-right .minicolors-panel {
-right:2em !important;
-top: -3.5em !important;
+right:12em !important;
+top: -6em !important;
 }
 
 .minicolors-position-left .minicolors-panel {
@@ -1058,6 +1058,12 @@ border:0 !important;
 
 .minicolors .minicolors-grid {
 cursor: none;
+}
+
+/* HIDE MINICOLORS SLIDER */
+
+.minicolors-slider {
+display: none;
 }
 
 /*
