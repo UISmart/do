@@ -12,6 +12,9 @@ $(editor).append("<div class='editor'>\
 <div class='editorAddJumbotron animated flipInX'></div>\
 </div>");
 
+// editor left - the grid
+$(editor).insertBefore ( $( "#header" ) );
+
 // editor right
 $(editor).append("<div id='editorRight'>\
 <div class='fontH1'><i class='fa fa-font'></i></div>\
@@ -51,7 +54,10 @@ $( ".editorGridLeft" ).insertBefore ( $( "#theGrid" ) );
 $('.editorGridLeft').append("<div class='col1'><div class='col-lines'><div class='col-line'></div></div></div>\
 <div class='col2'><div class='col-lines'><div class='col-line'></div><div class='col-line'></div></div></div>\
 <div class='col3'><div class='col-lines'><div class='col-line'></div><div class='col-line'></div><div class='col-line'></div></div></div>\
-<div class='col4'><div class='col-lines'><div class='col-line'></div><div class='col-line'></div><div class='col-line'></div><div class='col-line'></div></div></div>");
+<div class='col4'><div class='col-lines'><div class='col-line'></div><div class='col-line'></div><div class='col-line'></div><div class='col-line'></div></div></div>\
+<div class='editorTrashGrid'><i class='fa fa-trash-o'></i></div>\
+<div class='editorAddGrid'><i class='fa fa-plus'></i></div>\
+</div>");
 
 // editor left - the grid - changing columns
 
@@ -169,10 +175,47 @@ $(".editorOpacityOff").append('<i class="fa fa-adjust"></i>');
     $('.editortrash').css('display', 'block');
     $('.editorColors').css('display', 'block');
     $('.editorImages').css('display', 'block');
-    $('.editorImagesClose').css('display', 'block');
+    $('.editorImagesClose').css('display', 'none');
     $('#editorRight').css('display', 'block');
     $('#editorRightClose').css('display', 'block');
     $('.fontH1').css('display', 'block');
+    $('.editorGridLeft').css('display', 'none');
+    });
+
+    // editor Grid trash / add
+    $('.editorTrashGrid').click(function() {
+    $('#theGrid').show().delay(500).fadeOut();
+    $('.editorAddGrid').css('display', 'block');
+    $('.editorTrashGrid').css('display', 'none');
+    //
+    $('.col1').css('display', 'none');
+    $('.col2').css('display', 'none');
+    $('.col3').css('display', 'none');
+    $('.col4').css('display', 'none');
+    // delete editor
+    $('.editorAddJumbotron').css('display', 'block');
+    $('.editorColors').css('display', 'none');
+    $('.editorImages').css('display', 'none');
+    $('.editorImagesClose').css('display', 'none');
+    $('.editortrash').css('display', 'none');
+    // end delete editor
+    });
+
+    // add grid
+
+    $('.editorAddGrid').click(function() {
+    $('#theGrid').show().delay(500).fadeIn();
+    $('.editorAddGrid').css('display', 'none');
+    $('.editorTrashGrid').css('display', 'block');
+    $('.editor').css('display', 'block');
+    $('.col1').css('display', 'block');
+    $('.col2').css('display', 'block');
+    $('.col3').css('display', 'block');
+    $('.col4').css('display', 'block');
+    $('.editorColors').css('display', 'none');
+    $('.editorImages').css('display', 'none');
+    $('.editorImagesClose').css('display', 'none');
+    $('.editortrash').css('display', 'none');
     });
 
     // H1 EDITOR.
@@ -497,6 +540,13 @@ $(document).ready(function() {
 
 // MENU APPAREANCE
 
+var editorLeftElements =
+$('.editortrash');
+$('.editorColors');
+$('.editorImages');
+$('.browse');
+$('.editorImagesClose');
+
 $(function() {
     $(".jumbotron").hover( function() {
 
@@ -509,6 +559,18 @@ $(function() {
     $("#theGrid").hover( function() {
 
         $(".editorGridLeft").css("display","block");
+        $('.editorGridLeft').css('top', '0');
+
+        if ($('.editorAddJumbotron').css('display') === 'block') {
+
+          $('.editorGridLeft').css('top', '5.1em');
+
+        } else {
+
+          $('.editorGridLeft').css('top', '0');
+        }
+
+        // $(editorLeftElements).css("display","none");
 
     });
 });

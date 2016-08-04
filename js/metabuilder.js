@@ -77,8 +77,8 @@ $(function(){
 // EDITABLE COLUMNS
 
 $(function(){
-    var $div=$('.col-md-4'), isEditable=$div.is('.editable');
-    $('.col-md-4').prop('contenteditable',!isEditable).toggleClass('editable');
+    var $div=$('p.grid'), isEditable=$div.is('.editable');
+    $('p.grid').prop('contenteditable',!isEditable).toggleClass('editable');
 })
 
 // TRIGGER EDITOR OFF  < //

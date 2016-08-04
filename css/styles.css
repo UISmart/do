@@ -30,12 +30,11 @@ font-family: "brandon-grotesque", sans-serif;
 
 h3 {
 text-align: center;
-font-size: 4em;
+font-size: 3em;
 font-weight: 400;
 font-family: "brandon-grotesque", sans-serif;
 margin-bottom: 1em;
-/* color:#e74c3c; */
-color:yellow;
+color:#e74c3c;
 }
 
 p.grid {
@@ -115,6 +114,10 @@ outline: 1px dashed rgba(255, 255, 255, 0.7);
 }
 
 h3:focus {
+outline: 1px dashed rgba(255, 255, 255, 0.5);
+}
+
+p.grid:focus {
 outline: 1px dashed rgba(255, 255, 255, 0.5);
 }
 
@@ -319,9 +322,8 @@ border:0;
 
 .editor {
 display: none;
-position: absolute;
+position:absolute;
 left:0;
-top:7em;
 width:5em;
 z-index: 3;
 border:0;
@@ -427,20 +429,40 @@ height: 5em;
 background: rgba(50, 50, 70, 0.7);
 }
 
+.editorTrashGrid {
+float: left;
+cursor: pointer;
+width:100%;
+height: 5em;
+background: rgba(30, 30, 50, 0.7);
+}
+
 .editorAddJumbotron {
 display: none;
 float: left;
 cursor: pointer;
 width:100%;
 height: 5em;
-background: rgba(50, 50, 70, 0.7);
+background: rgba(30, 30, 50, 0.7);
+}
+
+.editorAddGrid {
+display: none;
+position: absolute;
+top:0;
+float: left;
+cursor: pointer;
+width:100%;
+height: 5em;
+background: rgba(30, 30, 50, 0.7);
 }
 
 .editorImages:hover,
-.editorOpacity:hover,
 .editortrash:hover,
-.editorAddJumbotron:hover {
-background: rgba(30, 30, 50, 0.7);
+.editorAddJumbotron:hover,
+.editorTrashGrid:hover,
+.editorAddGrid:hover {
+background: rgba(30, 30, 50, 0.9);
 -webkit-transition-duration: 1s; /* Safari */
 transition-duration: 1s;
 }
@@ -492,7 +514,6 @@ border:0;
 display:none;
 position: absolute;
 right:0;
-top:7em;
 width:5em;
 z-index: 999;
 border:0;
@@ -502,7 +523,6 @@ border:0;
 display:none;
 position: absolute;
 right:0;
-top:7em;
 width:5em;
 z-index: 999;
 border:0;
@@ -673,10 +693,10 @@ z-index:8;
 
 .editorGridLeft {
 display: none;
-position:relative;
-top:2em;
+position: relative;
 left:0;
 width:5em;
+z-index: 999;
 }
 
 .col1, .col2, .col3, .col4 {
@@ -698,7 +718,7 @@ transition-duration: 1s;
 }
 
 .col-lines {
-padding: 14px;
+padding: 18px;
 padding-top: 24px;
 }
 
@@ -783,7 +803,7 @@ i.fa.fa-trash-o {
 color:#fff;
 font-size:2em;
 padding:21px;
-padding-left: 24px;
+padding-left: 22px;
 }
 
 .small-trash {
@@ -1112,7 +1132,7 @@ border:0 !important;
 /* dropdown menu to select font */
 .font-select .fs-drop {
 width: 8.8em !important;
-height: 9.5em !important;
+height: 17.4em !important;
 background:rgb(50, 50, 70) !important;
 color:#bbb !important;
 border-style:none !important;
@@ -1127,7 +1147,8 @@ border-radius:0 !important;
 /* ul class */
 .font-select .fs-results {
 width: 97.5% !important;
-height:9em !important;
+height:16.5em !important;
+max-height: 16.5em !important;
 margin:6px 0 !important;
 }
 
