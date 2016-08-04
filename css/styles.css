@@ -799,6 +799,11 @@ background: rgba(50, 50, 70, 0.8);
 ========================================================
 */
 
+i.fa.fa-chevron-left, i.fa.fa-chevron-right {
+color:#fff;
+font-size:1.5em;
+}
+
 i.fa.fa-trash-o {
 color:#fff;
 font-size:2em;
@@ -1138,7 +1143,7 @@ border:0 !important;
 /* dropdown menu to select font */
 .font-select .fs-drop {
 width: 8.8em !important;
-height: 17.4em !important;
+height: 13em !important;
 background:rgb(50, 50, 70) !important;
 color:#bbb !important;
 border-style:none !important;
@@ -1153,8 +1158,8 @@ border-radius:0 !important;
 /* ul class */
 .font-select .fs-results {
 width: 97.5% !important;
-height:16.5em !important;
-max-height: 16.5em !important;
+height:13em !important;
+max-height: 13em !important;
 margin:6px 0 !important;
 }
 
@@ -1172,6 +1177,33 @@ background: rgb(15, 250, 220) !important;
 section {
 background: rgba(50, 50, 70, 1);
 padding: 3em;
+}
+
+/*
+========================================================
+11. CAROUSEL
+========================================================
+*/
+
+.item {
+}
+
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+height: 300px;
+}
+
+.carousel-control.left, .carousel-control.right {
+background: none !important;
+}
+
+.slider-background {
+width: 100%;
+background-repeat: repeat;
+}
+
+.carousel-control {
+text-shadow: none !important;
+opacity:1;
 }
 
 

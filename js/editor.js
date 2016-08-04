@@ -156,7 +156,8 @@ $(".editorOpacityOff").append('<i class="fa fa-adjust"></i>');
     // delete jumbotron + some elements on menu
 
     $('.editortrash').click(function() {
-    $('.jumbotron').show().delay(500).fadeOut();
+    //$('.jumbotron').show().delay(500).fadeOut();
+    $('.jumbotron').css ('display', 'none').delay(500).fadeOut();
     $('.editorAddJumbotron').css('display', 'block');
     $('.editortrash').css('display', 'none');
     $('.editorColors').css('display', 'none');
@@ -216,6 +217,7 @@ $(".editorOpacityOff").append('<i class="fa fa-adjust"></i>');
     $('.editorImages').css('display', 'none');
     $('.editorImagesClose').css('display', 'none');
     $('.editortrash').css('display', 'none');
+    $('.editorGridLeft').css('top', '0');
     });
 
     // H1 EDITOR.
@@ -561,7 +563,7 @@ $(function() {
         $(".editorGridLeft").css("display","block");
         $('.editorGridLeft').css('top', '0');
 
-        if ($('.editorAddJumbotron').css('display') === 'block') {
+        if ($('.jumbotron').css('display') === 'none') {
 
           $('.editorGridLeft').css('top', '5.1em');
 
