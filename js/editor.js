@@ -55,9 +55,11 @@ $('.editorGridLeft').append("<div class='col1'><div class='col-lines'><div class
 <div class='col2'><div class='col-lines'><div class='col-line'></div><div class='col-line'></div></div></div>\
 <div class='col3'><div class='col-lines'><div class='col-line'></div><div class='col-line'></div><div class='col-line'></div></div></div>\
 <div class='col4'><div class='col-lines'><div class='col-line'></div><div class='col-line'></div><div class='col-line'></div><div class='col-line'></div></div></div>\
-<div class='editorTrashGrid'><i class='fa fa-trash-o'></i></div>\
+<div class='editorTrashGrid'></div>\
 <div class='editorAddGrid'><i class='fa fa-plus'></i></div>\
 </div>");
+
+$(".editorTrashGrid").append('<img class="svg svg-size" src="https://uismart.github.io/do/img/garbage.svg"/>');
 
 // editor left - the grid - changing columns
 
@@ -95,8 +97,8 @@ $('.FourColumnLayout').toggleClass ('FourColumnLayout FourColumnLayout');
 $('.editor').addClass ('animated slideInLeft');
 
 // editor images
-$(".editorImages").append('<i class="fa fa-camera"></i>');
-$(".editorImagesClose").append('<i class="fa fa-camera"></i>');
+$(".editorImages").append('<img class="svg svg-size" src="https://uismart.github.io/do/img/photo-camera-1.svg"/>');
+$(".editorImagesClose").append('<img class="svg svg-size" src="https://uismart.github.io/do/img/photo-camera-1.svg"/>');
 
 // editor browse images > //
 $('.editorImages').click(function() {
@@ -150,7 +152,7 @@ $(".editorOpacityOff").append('<i class="fa fa-adjust"></i>');
     });
 
     // editor trash / add
-    $(".editortrash").append('<i class="fa fa-trash-o"></i>');
+    $(".editortrash").append('<img class="svg svg-size" src="https://uismart.github.io/do/img/garbage.svg"/>');
     $(".editorAddJumbotron").append('<i class="fa fa-plus"></i>');
 
     // delete jumbotron + some elements on menu
@@ -180,7 +182,8 @@ $(".editorOpacityOff").append('<i class="fa fa-adjust"></i>');
     $('#editorRight').css('display', 'block');
     $('#editorRightClose').css('display', 'block');
     $('.fontH1').css('display', 'block');
-    $('.editorGridLeft').css('display', 'none');
+
+    $('.editorAddGrid').css('display', 'block');
     });
 
     // editor Grid trash / add
@@ -213,10 +216,6 @@ $(".editorOpacityOff").append('<i class="fa fa-adjust"></i>');
     $('.col2').css('display', 'block');
     $('.col3').css('display', 'block');
     $('.col4').css('display', 'block');
-    $('.editorColors').css('display', 'none');
-    $('.editorImages').css('display', 'none');
-    $('.editorImagesClose').css('display', 'none');
-    $('.editortrash').css('display', 'none');
     $('.editorGridLeft').css('top', '0');
     });
 
@@ -572,7 +571,41 @@ $(function() {
           $('.editorGridLeft').css('top', '0');
         }
 
-        // $(editorLeftElements).css("display","none");
+    });
+});
+
+$(function(){
+    jQuery('img.svg').each(function(){
+        var $img = jQuery(this);
+        var imgID = $img.attr('id');
+        var imgClass = $img.attr('class');
+        var imgURL = $img.attr('src');
+
+        jQuery.get(imgURL, function(data) {
+            // Get the SVG tag, ignore the rest
+            var $svg = jQuery(data).find('svg');
+
+            // Add replaced image's ID to the new SVG
+            if(typeof imgID !== 'undefined') {
+                $svg = $svg.attr('id', imgID);
+            }
+            // Add replaced image's classes to the new SVG
+            if(typeof imgClass !== 'undefined') {
+                $svg = $svg.attr('class', imgClass+' replaced-svg');
+            }
+
+            // Remove any invalid XML tags as per http://validator.w3.org
+            $svg = $svg.removeAttr('xmlns:a');
+
+            // Check if the viewport is set, else we gonna set it if we can.
+            if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
+                $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
+            }
+
+            // Replace image with new SVG
+            $img.replaceWith($svg);
+
+        }, 'xml');
 
     });
 });
