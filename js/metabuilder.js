@@ -5,81 +5,6 @@
  *
  */
 
-// DRAG & SNAP.
-
-$( function() {
-$( "#draggable-section" ).draggable({ snap: ".ui-widget-header" });
-} );
-
-
-// DRAG & DROP.
-
-$( function() {
-    $( "#draggable-section" ).draggable();
-    $( "#droppable" ).droppable({
-      drop: function( event, ui ) {
-        $( this )
-          .addClass( "ui-state-highlight" )
-          .find( "p" )
-            .html( "Dropped!" );
-      }
-    });
-  } );
-
-
-// RESIZE ME.
-$( function() {
-    $( "#resizable" ).resizable();
-  } );
-
-// EDITABLE H1.
-
-$(function(){
-    var $div=$('h1'), isEditable=$div.is('.editable');
-    $('h1').prop('contenteditable',!isEditable).toggleClass('editable');
-})
-
-// EDITABLE NAVBAR
-
-$(function(){
-    var $div=$('.navbar-nav>li>a'), isEditable=$div.is('.editable');
-    $('.navbar-nav>li>a').prop('contenteditable',!isEditable).toggleClass('editable');
-})
-
-// EDITABLE H3
-
-$(function(){
-    var $div=$('h3'), isEditable=$div.is('.editable');
-    $('h3').prop('contenteditable',!isEditable).toggleClass('editable');
-})
-
-// EDITABLE TEXT JUMBOTRON.
-
-$(function(){
-    var $div=$('h2.subtitle'), isEditable=$div.is('.editable');
-    $('h2.subtitle').prop('contenteditable',!isEditable).toggleClass('editable');
-})
-
-// EDITABLE CALL-TO-ACTION JUMBOTRON.
-
-$(function(){
-    var $div=$('.btn-primary'), isEditable=$div.is('.editable');
-    $('.btn-primary').prop('contenteditable',!isEditable).toggleClass('editable');
-})
-
-// EDITABLE BRAND.
-
-$(function(){
-    var $div=$('.navbar-brand'), isEditable=$div.is('.editable');
-    $('.navbar-brand').prop('contenteditable',!isEditable).toggleClass('editable');
-})
-
-// EDITABLE COLUMNS
-
-$(function(){
-    var $div=$('p.grid'), isEditable=$div.is('.editable');
-    $('p.grid').prop('contenteditable',!isEditable).toggleClass('editable');
-})
 
 // TRIGGER EDITOR OFF  < //
 
@@ -170,22 +95,3 @@ $(function() {
 $('.deleteJumbotron').click(function() {
 $("#buttonJumbotron").css("display", "none");
 });
-
-// UPLOAD IMAGE
-
-function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#header-image')
-                    .attr('src', e.target.result)
-                    .width('100%')
-                    .height('auto');
-            };
-
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-
-// STORE THE DESIGN

@@ -1,3 +1,21 @@
+/*
+ * The Engine behind OneGrid
+ *
+ * Copyright: Andres Buzzio https://andresbuzzio.github.io/portfolio
+ *
+ */
+
+// EDITABLE
+
+var EditableDivs = ("h1, h2, p");
+
+$(function(){
+    var $div=$(EditableDivs), isEditable=$div.is('.editable');
+    $(EditableDivs).prop('contenteditable',!isEditable).toggleClass('editable');
+})
+
+// EDITOR
+
 $(document).ready(function() {
 
 var editor = "#theEditor";
@@ -7,6 +25,7 @@ $(editor).append("<div class='editor'>\
 <div class='editorColors'></div>\
 <div class='editorImages'></div>\
 <div class='editorImagesClose'></div>\
+<div class='editorBlocks'></div>\
 <div class='browse'></div>\
 <div class='editortrash animated flipInX'></div>\
 <div class='editorAddJumbotron animated flipInX'></div>\
@@ -539,7 +558,7 @@ $(document).ready(function() {
 
 });
 
-// MENU APPAREANCE
+// MENU JUMBOTRON
 
 var editorLeftElements =
 $('.editortrash');
@@ -573,6 +592,8 @@ $(function() {
 
     });
 });
+
+// SVG IMAGES COLOUR
 
 $(function(){
     jQuery('img.svg').each(function(){
@@ -608,4 +629,35 @@ $(function(){
         }, 'xml');
 
     });
+});
+
+// UPLOAD IMAGE
+
+function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#header-image')
+                    .attr('src', e.target.result)
+                    .width('100%')
+                    .height('auto');
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+// SORTABLE BLOCKS
+
+$( function() {
+    $( ".sortable" ).sortable({
+      revert: true
+    });
+    $( "#draggable" ).draggable({
+      connectToSortable: "#sortable",
+      helper: "clone",
+      revert: "invalid"
+    });
+    $( "ul, li" ).disableSelection();
 });
