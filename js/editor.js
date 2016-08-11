@@ -23,10 +23,12 @@ var editor = "#theEditor";
 // editor left
 $(editor).append("<div class='editor'>\
 <div class='editorColors'></div>\
-<div class='editorImages'></div>\
-<div class='editorImagesClose'></div>\
+<div class='editorImages'><img class='svg' src='https://uismart.github.io/do/img/photo-camera-1.svg'/></div>\
+<div class='editorImagesClose'><img class='svg' src='https://uismart.github.io/do/img/photo-camera-1.svg'/></div>\
 <div class='editorBlocks'><img class='svg' src='https://uismart.github.io/do/img/drag.svg'/></div>\
 <div class='editorBlocksClose'></div>\
+<div class='editorSize'></div>\
+<div class='editorSizeClose'></div>\
 <div class='browse'></div>\
 <div class='editortrash animated flipInX'></div>\
 <div class='editorAddJumbotron animated flipInX'></div>\
@@ -63,62 +65,11 @@ $(editor).append("<div id='editorRightH2'>\
 <div id='plus-minusH2' class='animated fadeIn'><div class='plusFontH2'><i class='fa fa-plus white'></i></div><div class='minusFontH2'><i class='fa fa-minus'></i></div>\
 </div>");
 
-// editor left - the grid
-
-$('#theGrid').append("<div class='editorGridLeft animated slideInLeft'></div>");
-$( ".editorGridLeft" ).insertBefore ( $( "#theGrid" ) );
-
-
-// editor left - the grid - columns
-
-$('.editorGridLeft').append("<div class='col1'><div class='col-lines'><div class='col-line'></div></div></div>\
-<div class='col2'><div class='col-lines'><div class='col-line'></div><div class='col-line'></div></div></div>\
-<div class='col3'><div class='col-lines'><div class='col-line'></div><div class='col-line'></div><div class='col-line'></div></div></div>\
-<div class='col4'><div class='col-lines'><div class='col-line'></div><div class='col-line'></div><div class='col-line'></div><div class='col-line'></div></div></div>\
-<div class='editorTrashGrid'></div>\
-<div class='editorAddGrid'><i class='fa fa-plus'></i></div>\
-</div>");
-
-$(".editorTrashGrid").append('<img class="svg" src="https://uismart.github.io/do/img/cross-out.svg"/>');
-
-// editor left - the grid - changing columns
-
-$('.col1').click(function() {
-$('.OneColumnLayout').toggleClass ('OneColumnLayout OneColumnLayout');
-$('.TwoColumnLayout').toggleClass ('TwoColumnLayout OneColumnLayout');
-$('.ThreeColumnLayout').toggleClass ('ThreeColumnLayout OneColumnLayout');
-$('.FourColumnLayout').toggleClass ('FourColumnLayout OneColumnLayout');
-});
-
-
-$('.col2').click(function() {
-$('.OneColumnLayout').toggleClass ('OneColumnLayout TwoColumnLayout');
-$('.TwoColumnLayout').toggleClass ('TwoColumnLayout TwoColumnLayout');
-$('.ThreeColumnLayout').toggleClass ('ThreeColumnLayout TwoColumnLayout');
-$('.FourColumnLayout').toggleClass ('FourColumnLayout TwoColumnLayout');
-});
-
-$('.col3').click(function() {
-$('.OneColumnLayout').toggleClass ('OneColumnLayout ThreeColumnLayout');
-$('.TwoColumnLayout').toggleClass ('TwoColumnLayout ThreeColumnLayout');
-$('.ThreeColumnLayout').toggleClass ('ThreeColumnLayout ThreeColumnLayout');
-$('.FourColumnLayout').toggleClass ('FourColumnLayout ThreeColumnLayout');
-});
-
-$('.col4').click(function() {
-$('.OneColumnLayout').toggleClass ('OneColumnLayout FourColumnLayout');
-$('.TwoColumnLayout').toggleClass ('TwoColumnLayout FourColumnLayout');
-$('.ThreeColumnLayout').toggleClass ('ThreeColumnLayout FourColumnLayout');
-$('.FourColumnLayout').toggleClass ('FourColumnLayout FourColumnLayout');
-});
-
 
 // editor IN
 $('.editor').addClass ('animated slideInLeft');
 
 // editor images
-$(".editorImages").append('<img class="svg" src="https://uismart.github.io/do/img/photo-camera-1.svg"/>');
-$(".editorImagesClose").append('<img class="svg" src="https://uismart.github.io/do/img/photo-camera-1.svg"/>');
 
 // editor browse images > //
 $('.editorImages').click(function() {
@@ -183,6 +134,9 @@ $(".editorOpacityOff").append('<i class="fa fa-adjust"></i>');
     $('.jumbotron').css ('border', '1px dashed #fff');
     // append the two wrappers to the unordered list 'sortable'
     $( ".wrapper, .wrapperGrid" ).appendTo( $( ".sortable" ) );
+    // change status
+    $('.editorBlocks').css ('display', 'none');
+    $('.editorBlocksClose').css ('display', 'block');
     });
 
 
@@ -475,7 +429,7 @@ $(".editorOpacityOff").append('<i class="fa fa-adjust"></i>');
 });
 
 
-// editor colors
+// EDITOR COLORS
 
 $(document).ready(function() {
 
@@ -576,13 +530,6 @@ $(document).ready(function() {
 
 // MENU JUMBOTRON
 
-var editorLeftElements =
-$('.editortrash');
-$('.editorColors');
-$('.editorImages');
-$('.browse');
-$('.editorImagesClose');
-
 $(function() {
     $(".jumbotron").hover( function() {
 
@@ -590,26 +537,6 @@ $(function() {
 
     });
 });
-
-/*
-$(function() {
-    $("#theGrid").hover( function() {
-
-        $(".editorGridLeft").css("display","block");
-        $('.editorGridLeft').css('top', '0');
-
-        if ($('.jumbotron').css('display') === 'none') {
-
-          $('.editorGridLeft').css('top', '5.1em');
-
-        } else {
-
-          $('.editorGridLeft').css('top', '0');
-        }
-
-    });
-});
-*/
 
 // SVG IMAGES COLOUR
 

@@ -13,23 +13,24 @@
      var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
      var fonts = [
-      "Arvo",
-      "Georgia",
-      "Helvetica",
-      "Lato",
-      "Montserrat",
-      "Nunito",
-      "Open Sans",
-      "Oswald",
-      "Pacifico",
-      "Pattaya",
-      "Parisienne",
-      "Questrial",
-	    "Roboto",
-      "Suez One",
-      "Raleway",
-      "Roboto Slab",
-      "Work Sans"
+       "Arvo",
+       "Georgia",
+       "Helvetica",
+       "Lato",
+       "Lobster",
+       "Montserrat",
+       "Nunito",
+       "Open Sans",
+       "Oleo Script",
+       "Oswald",
+       "Pacifico",
+       "Pattaya",
+       "Parisienne",
+ 	     "Roboto",
+       "Suez One",
+       "Raleway",
+       "Roboto Slab",
+       "Work Sans"
   ];
 
     var settings = {
