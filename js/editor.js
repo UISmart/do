@@ -25,7 +25,8 @@ $(editor).append("<div class='editor'>\
 <div class='editorColors'></div>\
 <div class='editorImages'></div>\
 <div class='editorImagesClose'></div>\
-<div class='editorBlocks'></div>\
+<div class='editorBlocks'><img class='svg' src='https://uismart.github.io/do/img/drag.svg'/></div>\
+<div class='editorBlocksClose'></div>\
 <div class='browse'></div>\
 <div class='editortrash animated flipInX'></div>\
 <div class='editorAddJumbotron animated flipInX'></div>\
@@ -78,7 +79,7 @@ $('.editorGridLeft').append("<div class='col1'><div class='col-lines'><div class
 <div class='editorAddGrid'><i class='fa fa-plus'></i></div>\
 </div>");
 
-$(".editorTrashGrid").append('<img class="svg svg-size" src="https://uismart.github.io/do/img/garbage.svg"/>');
+$(".editorTrashGrid").append('<img class="svg" src="https://uismart.github.io/do/img/cross-out.svg"/>');
 
 // editor left - the grid - changing columns
 
@@ -116,8 +117,8 @@ $('.FourColumnLayout').toggleClass ('FourColumnLayout FourColumnLayout');
 $('.editor').addClass ('animated slideInLeft');
 
 // editor images
-$(".editorImages").append('<img class="svg svg-size" src="https://uismart.github.io/do/img/photo-camera-1.svg"/>');
-$(".editorImagesClose").append('<img class="svg svg-size" src="https://uismart.github.io/do/img/photo-camera-1.svg"/>');
+$(".editorImages").append('<img class="svg" src="https://uismart.github.io/do/img/photo-camera-1.svg"/>');
+$(".editorImagesClose").append('<img class="svg" src="https://uismart.github.io/do/img/photo-camera-1.svg"/>');
 
 // editor browse images > //
 $('.editorImages').click(function() {
@@ -142,7 +143,6 @@ $(".browse").append('<label class="fileUpload">\
 <span class="uploadBtn">Upload</span>\
 </label>\
 ');
-
 
 // editor opacity
 $(".editorOpacity").append('<i class="fa fa-adjust"></i>');
@@ -170,8 +170,24 @@ $(".editorOpacityOff").append('<i class="fa fa-adjust"></i>');
     $('#slider').css('display', 'none');
     });
 
+    // editor Sortable Blocks
+
+
+    // DOM: create the sortable list at the beginning
+    var SortableUL = ("<ul class='sortable' />");
+    $(".wrapper").append(SortableUL);
+    $( SortableUL).insertBefore ($(".wrapper"));
+
+    // editor blocks
+    $('.editorBlocks').click(function() {
+    $('.jumbotron').css ('border', '1px dashed #fff');
+    // append the two wrappers to the unordered list 'sortable'
+    $( ".wrapper, .wrapperGrid" ).appendTo( $( ".sortable" ) );
+    });
+
+
     // editor trash / add
-    $(".editortrash").append('<img class="svg svg-size" src="https://uismart.github.io/do/img/garbage.svg"/>');
+    $(".editortrash").append('<img class="svg" src="https://uismart.github.io/do/img/cross-out.svg"/>');
     $(".editorAddJumbotron").append('<i class="fa fa-plus"></i>');
 
     // delete jumbotron + some elements on menu
@@ -575,6 +591,7 @@ $(function() {
     });
 });
 
+/*
 $(function() {
     $("#theGrid").hover( function() {
 
@@ -592,6 +609,7 @@ $(function() {
 
     });
 });
+*/
 
 // SVG IMAGES COLOUR
 
@@ -651,13 +669,6 @@ function readURL(input) {
 // SORTABLE BLOCKS
 
 $( function() {
-    $( ".sortable" ).sortable({
-      revert: true
-    });
-    $( "#draggable" ).draggable({
-      connectToSortable: "#sortable",
-      helper: "clone",
-      revert: "invalid"
-    });
-    $( "ul, li" ).disableSelection();
-});
+    $( ".sortable" ).sortable();
+    $( ".sortable" ).disableSelection();
+  } );

@@ -28,6 +28,9 @@ text-decoration:none;
 transition-duration: 1s;
 }
 
+polygon {fill: #FFF !important;}
+img.svg {fill: #FFF !important;}
+
 /*
 ========================================================
 TYPOGRAPHY
@@ -405,13 +408,24 @@ background: rgba(30, 30, 50, 0.9);
 }
 
 .editorBlocks {
+display: block;
+padding: 19px;
+float: left;
+cursor: pointer;
+width:5em;
+height: 5em;
+background: rgba(50, 50, 70, 0.7);
+}
+
+.editorBlocksClose {
+display: none;
 padding-top: 22px;
 padding: 19px;
 float: left;
 cursor: pointer;
-width:100%;
+width:5em;
 height: 5em;
-background: rgba(50, 50, 70, 0.7);
+background: rgba(30, 30, 50, 0.9);
 }
 
 .browse {
@@ -458,7 +472,7 @@ background: rgba(50, 50, 70, 0.9);
 }
 
 .editortrash {
-padding: 19px;
+padding: 24px;
 float: left;
 cursor: pointer;
 width:100%;
@@ -467,7 +481,7 @@ background: rgba(50, 50, 70, 0.7);
 }
 
 .editorTrashGrid {
-padding: 19px;
+padding: 24px;
 float: left;
 cursor: pointer;
 width:100%;
@@ -876,11 +890,6 @@ padding-top: 24px;
 }
 
 svg path {fill: #FFF !important;}
-
-.svg-size {
-width: 30px;
-height: 30px;
-}
 
 i.fa.fa-film {
 color:#fff;
