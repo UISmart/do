@@ -23,19 +23,19 @@ var editor = "#theEditor";
 // editor left
 $(editor).append("<div class='editor'>\
 <div class='editorColors'></div>\
-<div class='editorImages'><img class='svg' src='https://uismart.github.io/do/img/photo-camera-1.svg'/></div>\
-<div class='editorImagesClose'><img class='svg' src='https://uismart.github.io/do/img/photo-camera-1.svg'/></div>\
+<div class='editorImages'><img class='svg' src='https://uismart.github.io/do/img/photo-camera.svg'/></div>\
+<div class='editorImagesClose'><img class='svg' src='https://uismart.github.io/do/img/photo-camera.svg'/></div>\
 <div class='editorBlocks'><img class='svg' src='https://uismart.github.io/do/img/drag.svg'/></div>\
 <div class='editorBlocksClose'></div>\
-<div class='editorSize'></div>\
-<div class='editorSizeClose'></div>\
+<div class='editorSize'><img class='svg' src='https://uismart.github.io/do/img/arrows-2.svg'/></div>\
+<div class='editorSizeClose'><img class='svg' src='https://uismart.github.io/do/img/arrows-2.svg'/></div>\
 <div class='browse'></div>\
-<div class='editortrash animated flipInX'></div>\
-<div class='editorAddJumbotron animated flipInX'></div>\
+<div class='editortrash'><img class='svg' src='https://uismart.github.io/do/img/cross-out.svg'/></div>\
+<div class='editorAddJumbotron'><img class='svg' src='https://uismart.github.io/do/img/add.svg'/></div>\
 </div>");
 
 // editor left - the grid
-$(editor).insertBefore ( $( "#header" ) );
+$(editor).insertBefore ( $( "#content" ) );
 
 // editor right
 $(editor).append("<div id='editorRight'>\
@@ -139,10 +139,52 @@ $(".editorOpacityOff").append('<i class="fa fa-adjust"></i>');
     $('.editorBlocksClose').css ('display', 'block');
     });
 
+// editor Sortable Blocks
 
-    // editor trash / add
-    $(".editortrash").append('<img class="svg" src="https://uismart.github.io/do/img/cross-out.svg"/>');
-    $(".editorAddJumbotron").append('<i class="fa fa-plus"></i>');
+// editor size
+
+// Sortable
+
+$( function() {
+    $( ".sortable" ).sortable();
+    $( ".sortable" ).disableSelection();
+  } );
+
+// Draggable
+
+$( function() {
+   $( "#draggable" ).draggable();
+ } );
+
+ // Resizable
+
+ $( function() {
+   $( ".resizable" ).resizable({
+     animate: true
+   });
+ } );
+
+
+// editor open resize >
+$('.editorSize').click(function() {
+$('.editorSize').css ('display', 'none');
+$('.editorSizeClose').css ('display', 'block');
+$('.editorSizeClose').css ('display', 'block');
+// make it resizable!
+$('.jumbotron').resizable();
+$('.jumbotron').removeClass('ui-resizable-disabled');
+// resize just height
+$(".jumbotron").resizable({grid: [10000, 1]});
+});
+
+// change the property cursor: with an image
+
+// editor close resize <
+$('.editorSizeClose').click(function() {
+$('.editorSize').css ('display', 'block');
+$('.editorSizeClose').css ('display', 'none');
+$('.jumbotron').resizable('disable');
+});
 
     // delete jumbotron + some elements on menu
 
@@ -157,6 +199,10 @@ $(".editorOpacityOff").append('<i class="fa fa-adjust"></i>');
     $('.editorImagesClose').css('display', 'none');
     $('#editorRight').css('display', 'none');
     $('#editorRightH2').css('display', 'none');
+    $('.editorSize').css('display', 'none');
+    $('.editorSizeClose').css('display', 'none');
+    $('.editorBlocks').css('display', 'none');
+    $('.editorBlocksClose').css('display', 'none');
     });
 
     // add jumbotron
@@ -173,6 +219,10 @@ $(".editorOpacityOff").append('<i class="fa fa-adjust"></i>');
     $('.fontH1').css('display', 'block');
 
     $('.editorAddGrid').css('display', 'block');
+
+    $('.editorSize').css('display', 'block');
+    $('.editorBlocks').css('display', 'block');
+
     });
 
     // editor Grid trash / add
@@ -592,10 +642,3 @@ function readURL(input) {
             reader.readAsDataURL(input.files[0]);
         }
     }
-
-// SORTABLE BLOCKS
-
-$( function() {
-    $( ".sortable" ).sortable();
-    $( ".sortable" ).disableSelection();
-  } );

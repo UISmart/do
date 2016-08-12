@@ -387,7 +387,6 @@ background: rgba(50, 50, 70, 0.7);
 }
 
 .editorImages, .editorVideos {
-padding-top: 22px;
 padding: 19px;
 float: left;
 cursor: pointer;
@@ -419,7 +418,6 @@ background: rgba(50, 50, 70, 0.7);
 
 .editorBlocksClose {
 display: none;
-padding-top: 22px;
 padding: 19px;
 float: left;
 cursor: pointer;
@@ -471,6 +469,36 @@ height: 5em;
 background: rgba(50, 50, 70, 0.9);
 }
 
+.editorSize {
+display: block;
+padding: 20px;
+float: left;
+cursor: pointer;
+width:5em;
+height: 5em;
+background: rgba(50, 50, 70, 0.7);
+transform: rotate(90deg);
+-ms-transform: rotate(90deg); /* IE 9 */
+-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+}
+
+.editorSizeClose {
+display: none;
+padding: 20px;
+float: left;
+cursor: pointer;
+width:5em;
+height: 5em;
+background: rgba(30, 30, 50, 0.9);
+transform: rotate(90deg);
+-ms-transform: rotate(90deg); /* IE 9 */
+-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+}
+
+#resizable { width: 150px; height: 150px; padding: 0.5em; background:yellow; }
+#resizable h3 { text-align: center; margin: 0; }
+
+
 .editortrash {
 padding: 24px;
 float: left;
@@ -491,6 +519,7 @@ background: rgba(30, 30, 50, 0.7);
 
 .editorAddJumbotron {
 display: none;
+padding:23px;
 float: left;
 cursor: pointer;
 width:100%;
@@ -514,7 +543,8 @@ background: rgba(30, 30, 50, 0.7);
 .editorAddJumbotron:hover,
 .editorTrashGrid:hover,
 .editorAddGrid:hover,
-.editorBlocks:hover {
+.editorBlocks:hover,
+.editorSize:hover {
 background: rgba(30, 30, 50, 0.9);
 -webkit-transition-duration: 1s; /* Safari */
 transition-duration: 1s;
@@ -1230,7 +1260,7 @@ background: rgb(15, 250, 220) !important;
 */
 
 section {
-background: rgba(50, 50, 70, 1);
+background: rgb(40, 40, 60);
 padding: 3em;
 }
 
@@ -1260,6 +1290,25 @@ background-repeat: repeat;
 text-shadow: none !important;
 opacity:1;
 }
+
+/*
+========================================================
+RESIZABLE
+========================================================
+*/
+
+.ui-resizable { position: relative;}
+.ui-resizable-handle { position: absolute;font-size: 0.1px; display: block; background:#0FFADC; }
+
+.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle { display: none; }
+.ui-resizable-n { cursor: n-resize; height: 7px; width: 100%; top: -5px; left: 0; }
+.ui-resizable-s { cursor: s-resize; height: 7px; width: 100%; bottom: -5px; left: 0; }
+.ui-resizable-e { cursor: e-resize; width: 0; right: -5px; top: 0; height: 100%; }
+.ui-resizable-w { cursor: w-resize; width: 0; left: -5px; top: 0; height: 100%; }
+.ui-resizable-se { cursor: se-resize; width: 24px; height: 24px; right: 1px; bottom: 1px; }
+.ui-resizable-sw { cursor: sw-resize; width: 9px; height: 9px; left: -5px; bottom: -5px; }
+.ui-resizable-nw { cursor: nw-resize; width: 9px; height: 9px; left: -5px; top: -5px; }
+.ui-resizable-ne { cursor: ne-resize; width: 9px; height: 9px; right: -5px; top: -5px;}
 
 
 /*
